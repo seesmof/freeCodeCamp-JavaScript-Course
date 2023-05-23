@@ -225,3 +225,22 @@ var titleCaseOver;
 studlyCapVar = 10;
 properCamelCase = "A String";
 titleCaseOver = 9000;
+
+// # Explore Differences Between the var and let Keywords
+
+// if you declare a variable with var it can be overwritten without any errors
+// `let` keyword was introduced in ES6 update
+// with let you cannot overwrite existing variables
+
+var catName = "Oliver";
+var catSound = "Meow!";
+
+catName = "Luna";
+catSound = "Meow!";
+
+/*
+let catName = "Oliver";
+let catSound = "Meow!";
+
+cannot override these now
+*/
