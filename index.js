@@ -23,10 +23,19 @@ submitButton.addEventListener("click", function () {
 });
 
 var myName;
+
+// ASSIGNMENTS
+
 // calculations are performed before the variable is assigned with the value
 
-// Setup
 var a;
-
-// Only change code below this line
 a = 7;
+let numberOutputParagraph = document.querySelector("#assignment-number");
+numberOutputParagraph.innerHTML = numberOutputParagraph.innerHTML.replace(
+  "_",
+  '<span class="font-bold">_</span>'
+);
+numberOutputParagraph.innerHTML = numberOutputParagraph.innerHTML.replaceAll(
+  "_",
+  a
+);
