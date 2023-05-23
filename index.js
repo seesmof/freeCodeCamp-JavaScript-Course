@@ -4,11 +4,11 @@ function capitalize(word) {
   return word[0].toUpperCase() + word.substring(1).toLowerCase();
 }
 
-// COMMENTS
+// # COMMENTS
 // JavaScript is awesome!
 /* JavaScript is awesome! */
 
-// VARIABLES
+// # VARIABLES
 var inputBox = document.getElementById("variables-alert-input-box");
 var variablesSubmitButton = document.getElementById(
   "variables-alert-submit-button"
@@ -26,7 +26,7 @@ variablesSubmitButton.addEventListener("click", function () {
 
 var myName;
 
-// ASSIGNMENTS
+// # ASSIGNMENTS
 
 // calculations are performed before the variable is assigned with the value
 
@@ -42,7 +42,7 @@ numberOutputParagraph.innerHTML = numberOutputParagraph.innerHTML.replaceAll(
   a
 );
 
-// Assigning the Value of One Variable to Another
+// # Assigning the Value of One Variable to Another
 
 var a;
 a = 7;
@@ -168,11 +168,11 @@ assignmentAdditionButton.addEventListener("click", function () {
   assignmentsResetInputs();
 });
 
-// Initializing Variables with the Assignment Operator
+// # Initializing Variables with the Assignment Operator
 
 var a = 9;
 
-// Declare String Variables
+// # Declare String Variables
 
 var myFirstName = "John";
 var myLastName = "Doe";
@@ -200,7 +200,8 @@ stringsSubmitButton.addEventListener("click", function () {
     "Hello, " +
     capitalize(firstNameValue).replace(/\s+/g, " ").trim() +
     " " +
-    capitalize(lastNameValue).replace(/\s+/g, " ").trim();
+    capitalize(lastNameValue).replace(/\s+/g, " ").trim() +
+    "\nHow are you doing?";
   alert(outputText);
   stringsResetInputs();
 });
