@@ -273,5 +273,10 @@ const quotient = 66 / 33;
 
 // # Increment a Number with JavaScript
 
-let myVar = 87;
-myVar++;
+let myVarIncrement = 87;
+myVarIncrement++;
+
+// # Decrement a Number with JavaScript
+
+let myVarDecrement = 11;
+myVarDecrement--;
