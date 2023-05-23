@@ -12,7 +12,22 @@
   .input-field-underline {
     @apply bg-inherit ring-0 active:outline-none active:ring-0 border-slate-700 focus:border-slate-300 py-2 pr-24 duration-500 border-b-2 outline-none;
   }
+  .button {
+    @apply active:scale-95 inline-block px-4 py-2 font-medium duration-300 rounded-md;
+  }
   .button-gray {
-    @apply bg-slate-600 hover:bg-slate-700 active:scale-95 inline-block px-4 py-2 font-medium duration-300 rounded-md;
+    @apply bg-slate-600 hover:bg-slate-700;
+  }
+  .button-blue {
+    @apply hover:bg-blue-700 bg-blue-600;
+  }
+  .button-red {
+    @apply bg-red-600 hover:bg-red-700;
+  }
+  .button-green {
+    @apply bg-green-600 hover:bg-green-700;
+  }
+  .button-yellow {
+    @apply bg-yellow-600 hover:bg-yellow-700;
   }
 }
