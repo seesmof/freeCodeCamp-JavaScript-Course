@@ -6,8 +6,10 @@ import "/index.css";
 
 // VARIABLES
 var inputBox = document.getElementById("variables-alert-input-box");
-var submitButton = document.getElementById("variables-alert-submit-button");
-submitButton.addEventListener("click", function () {
+var variablesSubmitButton = document.getElementById(
+  "variables-alert-submit-button"
+);
+variablesSubmitButton.addEventListener("click", function () {
   let inputBoxValue = inputBox.value;
   if (inputBoxValue === "") {
     alert("Whoops... You didn't enter anything");
@@ -42,5 +44,29 @@ var a;
 a = 7;
 var b;
 b = a;
+
+let firstNumber = document.querySelector("#assignments-first-num-input-box");
+let secondNumber = document.querySelector("#assignments-second-num-input-box");
+let assignmentsSubmitButton = document.querySelector(
+  "#assignments-submit-button"
+);
+assignmentsSubmitButton.addEventListener("click", function () {
+  let firstNumberValue = firstNumber.value;
+  let secondNumberValue = secondNumber.value;
+  if (firstNumberValue === "" || secondNumberValue === "") {
+    alert("Whoops... You didn't enter anything");
+    return;
+  } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
+    alert("Whoops... You didn't enter a number");
+    return;
+  }
+  let resultingNumber =
+    parseInt(firstNumberValue) + parseInt(secondNumberValue);
+  let outputText =
+    firstNumberValue + " + " + secondNumberValue + " = " + resultingNumber;
+  alert(outputText);
+  firstNumber.value = "";
+  secondNumber.value = "";
+});
 
 // Initializing Variables with the Assignment Operator
