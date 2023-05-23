@@ -48,12 +48,16 @@ b = a;
 let firstNumber = document.querySelector("#assignments-first-num-input-box");
 let secondNumber = document.querySelector("#assignments-second-num-input-box");
 
+function resetInputs() {
+  firstNumber.value = "";
+  secondNumber.value = "";
+}
+
 let assignmentsResetButton = document.querySelector(
   "#assignments-reset-button"
 );
 assignmentsResetButton.addEventListener("click", function () {
-  firstNumber.value = "";
-  secondNumber.value = "";
+  resetInputs();
 });
 
 let assignmentsDivisionButton = document.querySelector(
@@ -62,20 +66,24 @@ let assignmentsDivisionButton = document.querySelector(
 assignmentsDivisionButton.addEventListener("click", function () {
   let firstNumberValue = firstNumber.value;
   let secondNumberValue = secondNumber.value;
+
   if (firstNumberValue === "" || secondNumberValue === "") {
     alert("Whoops... You didn't enter anything");
+    resetInputs();
     return;
   } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
     alert("Whoops... You didn't enter a number");
+    resetInputs();
     return;
   }
+
   let resultingNumber =
     parseInt(firstNumberValue) / parseInt(secondNumberValue);
   let outputText =
     firstNumberValue + " / " + secondNumberValue + " = " + resultingNumber;
+
   alert(outputText);
-  firstNumber.value = "";
-  secondNumber.value = "";
+  resetInputs();
 });
 
 let assignmentsMultiplicationButton = document.querySelector(
@@ -84,20 +92,24 @@ let assignmentsMultiplicationButton = document.querySelector(
 assignmentsMultiplicationButton.addEventListener("click", function () {
   let firstNumberValue = firstNumber.value;
   let secondNumberValue = secondNumber.value;
+
   if (firstNumberValue === "" || secondNumberValue === "") {
     alert("Whoops... You didn't enter anything");
+    resetInputs();
     return;
   } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
     alert("Whoops... You didn't enter a number");
+    resetInputs();
     return;
   }
+
   let resultingNumber =
     parseInt(firstNumberValue) * parseInt(secondNumberValue);
   let outputText =
     firstNumberValue + " * " + secondNumberValue + " = " + resultingNumber;
+
   alert(outputText);
-  firstNumber.value = "";
-  secondNumber.value = "";
+  resetInputs();
 });
 
 let assignmentsSubtractionButton = document.querySelector(
@@ -106,20 +118,24 @@ let assignmentsSubtractionButton = document.querySelector(
 assignmentsSubtractionButton.addEventListener("click", function () {
   let firstNumberValue = firstNumber.value;
   let secondNumberValue = secondNumber.value;
+
   if (firstNumberValue === "" || secondNumberValue === "") {
     alert("Whoops... You didn't enter anything");
+    resetInputs();
     return;
   } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
     alert("Whoops... You didn't enter a number");
+    resetInputs();
     return;
   }
+
   let resultingNumber =
     parseInt(firstNumberValue) - parseInt(secondNumberValue);
   let outputText =
     firstNumberValue + " - " + secondNumberValue + " = " + resultingNumber;
+
   alert(outputText);
-  firstNumber.value = "";
-  secondNumber.value = "";
+  resetInputs();
 });
 
 let assignmentAdditionButton = document.querySelector(
@@ -128,20 +144,24 @@ let assignmentAdditionButton = document.querySelector(
 assignmentAdditionButton.addEventListener("click", function () {
   let firstNumberValue = firstNumber.value;
   let secondNumberValue = secondNumber.value;
+
   if (firstNumberValue === "" || secondNumberValue === "") {
     alert("Whoops... You didn't enter anything");
+    resetInputs();
     return;
   } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
     alert("Whoops... You didn't enter a number");
+    resetInputs();
     return;
   }
+
   let resultingNumber =
     parseInt(firstNumberValue) + parseInt(secondNumberValue);
   let outputText =
     firstNumberValue + " + " + secondNumberValue + " = " + resultingNumber;
+
   alert(outputText);
-  firstNumber.value = "";
-  secondNumber.value = "";
+  resetInputs();
 });
 
 // Initializing Variables with the Assignment Operator
