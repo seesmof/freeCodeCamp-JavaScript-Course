@@ -282,3 +282,9 @@ let myVarDecrement = 11;
 myVarDecrement--;
 
 // # Create Decimal Numbers with JavaScript
+
+let decimalsMyDecimal = 3.14;
+
+// # Finding a Remainder in JavaScript
+
+const remainder = 11 % 3;
