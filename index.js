@@ -47,10 +47,85 @@ b = a;
 
 let firstNumber = document.querySelector("#assignments-first-num-input-box");
 let secondNumber = document.querySelector("#assignments-second-num-input-box");
-let assignmentsSubmitButton = document.querySelector(
-  "#assignments-submit-button"
+
+let assignmentsResetButton = document.querySelector(
+  "#assignments-reset-button"
 );
-assignmentsSubmitButton.addEventListener("click", function () {
+assignmentsResetButton.addEventListener("click", function () {
+  firstNumber.value = "";
+  secondNumber.value = "";
+});
+
+let assignmentsDivisionButton = document.querySelector(
+  "#assignments-division-button"
+);
+assignmentsDivisionButton.addEventListener("click", function () {
+  let firstNumberValue = firstNumber.value;
+  let secondNumberValue = secondNumber.value;
+  if (firstNumberValue === "" || secondNumberValue === "") {
+    alert("Whoops... You didn't enter anything");
+    return;
+  } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
+    alert("Whoops... You didn't enter a number");
+    return;
+  }
+  let resultingNumber =
+    parseInt(firstNumberValue) / parseInt(secondNumberValue);
+  let outputText =
+    firstNumberValue + " / " + secondNumberValue + " = " + resultingNumber;
+  alert(outputText);
+  firstNumber.value = "";
+  secondNumber.value = "";
+});
+
+let assignmentsMultiplicationButton = document.querySelector(
+  "#assignments-multiplication-button"
+);
+assignmentsMultiplicationButton.addEventListener("click", function () {
+  let firstNumberValue = firstNumber.value;
+  let secondNumberValue = secondNumber.value;
+  if (firstNumberValue === "" || secondNumberValue === "") {
+    alert("Whoops... You didn't enter anything");
+    return;
+  } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
+    alert("Whoops... You didn't enter a number");
+    return;
+  }
+  let resultingNumber =
+    parseInt(firstNumberValue) * parseInt(secondNumberValue);
+  let outputText =
+    firstNumberValue + " * " + secondNumberValue + " = " + resultingNumber;
+  alert(outputText);
+  firstNumber.value = "";
+  secondNumber.value = "";
+});
+
+let assignmentsSubtractionButton = document.querySelector(
+  "#assignments-subtraction-button"
+);
+assignmentsSubtractionButton.addEventListener("click", function () {
+  let firstNumberValue = firstNumber.value;
+  let secondNumberValue = secondNumber.value;
+  if (firstNumberValue === "" || secondNumberValue === "") {
+    alert("Whoops... You didn't enter anything");
+    return;
+  } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
+    alert("Whoops... You didn't enter a number");
+    return;
+  }
+  let resultingNumber =
+    parseInt(firstNumberValue) - parseInt(secondNumberValue);
+  let outputText =
+    firstNumberValue + " - " + secondNumberValue + " = " + resultingNumber;
+  alert(outputText);
+  firstNumber.value = "";
+  secondNumber.value = "";
+});
+
+let assignmentAdditionButton = document.querySelector(
+  "#assignments-addition-button"
+);
+assignmentAdditionButton.addEventListener("click", function () {
   let firstNumberValue = firstNumber.value;
   let secondNumberValue = secondNumber.value;
   if (firstNumberValue === "" || secondNumberValue === "") {
