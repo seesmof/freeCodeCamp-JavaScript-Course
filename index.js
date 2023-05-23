@@ -1,5 +1,9 @@
 import "/index.css";
 
+function capitalize(word) {
+  return word[0].toUpperCase() + word.substring(1).toLowerCase();
+}
+
 // COMMENTS
 // JavaScript is awesome!
 /* JavaScript is awesome! */
@@ -48,7 +52,7 @@ b = a;
 let firstNumber = document.querySelector("#assignments-first-num-input-box");
 let secondNumber = document.querySelector("#assignments-second-num-input-box");
 
-function resetInputs() {
+function assignmentsResetInputs() {
   firstNumber.value = "";
   secondNumber.value = "";
 }
@@ -57,7 +61,7 @@ let assignmentsResetButton = document.querySelector(
   "#assignments-reset-button"
 );
 assignmentsResetButton.addEventListener("click", function () {
-  resetInputs();
+  assignmentsResetInputs();
 });
 
 let assignmentsDivisionButton = document.querySelector(
@@ -69,11 +73,11 @@ assignmentsDivisionButton.addEventListener("click", function () {
 
   if (firstNumberValue === "" || secondNumberValue === "") {
     alert("Whoops... You didn't enter anything");
-    resetInputs();
+    assignmentsResetInputs();
     return;
   } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
     alert("Whoops... You didn't enter a number");
-    resetInputs();
+    assignmentsResetInputs();
     return;
   }
 
@@ -83,7 +87,7 @@ assignmentsDivisionButton.addEventListener("click", function () {
     firstNumberValue + " / " + secondNumberValue + " = " + resultingNumber;
 
   alert(outputText);
-  resetInputs();
+  assignmentsResetInputs();
 });
 
 let assignmentsMultiplicationButton = document.querySelector(
@@ -95,11 +99,11 @@ assignmentsMultiplicationButton.addEventListener("click", function () {
 
   if (firstNumberValue === "" || secondNumberValue === "") {
     alert("Whoops... You didn't enter anything");
-    resetInputs();
+    assignmentsResetInputs();
     return;
   } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
     alert("Whoops... You didn't enter a number");
-    resetInputs();
+    assignmentsResetInputs();
     return;
   }
 
@@ -109,7 +113,7 @@ assignmentsMultiplicationButton.addEventListener("click", function () {
     firstNumberValue + " * " + secondNumberValue + " = " + resultingNumber;
 
   alert(outputText);
-  resetInputs();
+  assignmentsResetInputs();
 });
 
 let assignmentsSubtractionButton = document.querySelector(
@@ -121,11 +125,11 @@ assignmentsSubtractionButton.addEventListener("click", function () {
 
   if (firstNumberValue === "" || secondNumberValue === "") {
     alert("Whoops... You didn't enter anything");
-    resetInputs();
+    assignmentsResetInputs();
     return;
   } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
     alert("Whoops... You didn't enter a number");
-    resetInputs();
+    assignmentsResetInputs();
     return;
   }
 
@@ -135,7 +139,7 @@ assignmentsSubtractionButton.addEventListener("click", function () {
     firstNumberValue + " - " + secondNumberValue + " = " + resultingNumber;
 
   alert(outputText);
-  resetInputs();
+  assignmentsResetInputs();
 });
 
 let assignmentAdditionButton = document.querySelector(
@@ -147,11 +151,11 @@ assignmentAdditionButton.addEventListener("click", function () {
 
   if (firstNumberValue === "" || secondNumberValue === "") {
     alert("Whoops... You didn't enter anything");
-    resetInputs();
+    assignmentsResetInputs();
     return;
   } else if (isNaN(firstNumberValue) || isNaN(secondNumberValue)) {
     alert("Whoops... You didn't enter a number");
-    resetInputs();
+    assignmentsResetInputs();
     return;
   }
 
@@ -161,7 +165,42 @@ assignmentAdditionButton.addEventListener("click", function () {
     firstNumberValue + " + " + secondNumberValue + " = " + resultingNumber;
 
   alert(outputText);
-  resetInputs();
+  assignmentsResetInputs();
 });
 
 // Initializing Variables with the Assignment Operator
+
+var a = 9;
+
+// Declare String Variables
+
+var myFirstName = "John";
+var myLastName = "Doe";
+
+let stringsFirstNameInput = document.querySelector("#string-first-name-input");
+let stringsLastNameInput = document.querySelector("#string-last-name-input");
+let stringsSubmitButton = document.querySelector("#string-submit-button");
+
+function stringsResetInputs() {
+  stringsFirstNameInput.value = "";
+  stringsLastNameInput.value = "";
+}
+
+stringsSubmitButton.addEventListener("click", function () {
+  let firstNameValue = stringsFirstNameInput.value;
+  let lastNameValue = stringsLastNameInput.value;
+
+  if (firstNameValue === "" || lastNameValue === "") {
+    alert("Whoops... You didn't enter anything");
+    stringsResetInputs();
+    return;
+  }
+
+  let outputText =
+    "Hello, " +
+    capitalize(firstNameValue).replace(/\s+/g, " ").trim() +
+    " " +
+    capitalize(lastNameValue).replace(/\s+/g, " ").trim();
+  alert(outputText);
+  stringsResetInputs();
+});
