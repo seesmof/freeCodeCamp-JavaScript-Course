@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Algorithms and Data Structures - freeCodeCamp</title>
     
-    <script type="module" crossorigin src="/javascript-algorithms-data-structures_free-code-camp/assets/index-f3af65c6.js"></script>
-    <link rel="stylesheet" href="/javascript-algorithms-data-structures_free-code-camp/assets/index-6babe822.css">
+    <script type="module" crossorigin src="/javascript-algorithms-data-structures_free-code-camp/assets/index-58c9d426.js"></script>
+    <link rel="stylesheet" href="/javascript-algorithms-data-structures_free-code-camp/assets/index-39fa7386.css">
   </head>
   <body>
     <div class="bg-slate-900 text-slate-50 w-full min-h-screen">
@@ -27,11 +27,11 @@
               <input
                 type="text"
                 id="variables-alert-input-box"
-                class="bg-inherit ring-0 active:outline-none active:ring-0 border-slate-700 focus:border-slate-300 py-2 pr-24 duration-500 border-b-2 outline-none"
+                class="input-field-underline"
                 placeholder="Enter something..."
               />
               <button
-                class="bg-slate-600 hover:bg-slate-700 active:scale-95 inline-block px-4 py-2 font-medium duration-300 rounded-md"
+                class="button-gray button"
                 id="variables-alert-submit-button"
               >
                 Submit
@@ -44,13 +44,55 @@
             <h2 class="section-heading">Assignments</h2>
 
             <p id="assignment-number">The number is equal to _</p>
-          </section>
 
-          <!-- Assigning the Value of One Variable to Another -->
-          <section class="section-template">
-            <h2 class="section-heading">
-              Assigning the Value of One Variable to Another
-            </h2>
+            <div class="flex flex-col gap-2 pt-3">
+              <div class="sm:gap-6 flex flex-row gap-4">
+                <input
+                  type="text"
+                  id="assignments-first-num-input-box"
+                  class="input-field-underline"
+                  placeholder="Enter first number..."
+                />
+                <input
+                  type="text"
+                  id="assignments-second-num-input-box"
+                  class="input-field-underline"
+                  placeholder="Enter second number..."
+                />
+              </div>
+              <div class="sm:gap-2 flex flex-row gap-1 mt-3">
+                <button
+                  class="button-blue button px-6"
+                  id="assignments-addition-button"
+                >
+                  Add
+                </button>
+                <button
+                  class="button-red button px-6"
+                  id="assignments-subtraction-button"
+                >
+                  Subtract
+                </button>
+                <button
+                  class="button-green button px-6"
+                  id="assignments-multiplication-button"
+                >
+                  Multiply
+                </button>
+                <button
+                  class="button-yellow button px-6"
+                  id="assignments-division-button"
+                >
+                  Divide
+                </button>
+                <button
+                  class="button-gray button px-6"
+                  id="assignments-reset-button"
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
           </section>
         </main>
       </div>
