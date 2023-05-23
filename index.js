@@ -254,3 +254,7 @@ console.log(FCC, fact); // Change this line
 
 let constsParagraph = document.querySelector("#consts-paragraph");
 constsParagraph.innerHTML = FCC + " " + fact;
+
+// # Add Two Numbers with JavaScript
+
+const sum = 10 + 10;
