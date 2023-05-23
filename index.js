@@ -280,3 +280,5 @@ myVarIncrement++;
 
 let myVarDecrement = 11;
 myVarDecrement--;
+
+// # Create Decimal Numbers with JavaScript
