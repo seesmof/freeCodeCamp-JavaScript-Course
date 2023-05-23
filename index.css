@@ -4,9 +4,9 @@
 
 @layer components {
   .section-template {
-    @apply border-slate-700 sm:py-4 flex flex-col items-start py-2 border-t-2;
+    @apply border-slate-700 text-slate-200 sm:py-4 flex flex-col items-start py-2 border-t-2;
   }
   .section-heading {
-    @apply pb-2 text-2xl font-bold capitalize;
+    @apply text-slate-50 md:text-2xl pb-2 text-xl font-medium capitalize;
   }
 }

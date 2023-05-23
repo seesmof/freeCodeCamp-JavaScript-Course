@@ -5,10 +5,6 @@ import "/index.css";
 /* JavaScript is awesome! */
 
 // VARIABLES
-let sectionHeading = document.querySelector(".section-heading");
-let sectionHeadingText = "# " + sectionHeading.textContent;
-sectionHeading.innerHTML = sectionHeadingText;
-
 var inputBox = document.getElementById("variables-alert-input-box");
 var submitButton = document.getElementById("variables-alert-submit-button");
 submitButton.addEventListener("click", function () {
@@ -33,9 +29,11 @@ a = 7;
 let numberOutputParagraph = document.querySelector("#assignment-number");
 numberOutputParagraph.innerHTML = numberOutputParagraph.innerHTML.replace(
   "_",
-  '<span class="font-bold">_</span>'
+  '<span class="font-medium">_</span>'
 );
 numberOutputParagraph.innerHTML = numberOutputParagraph.innerHTML.replaceAll(
   "_",
   a
 );
+
+// Assigning the Value of One Variable to Another
