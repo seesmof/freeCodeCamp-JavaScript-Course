@@ -1,5 +1,4 @@
 import "/index.css";
-const bootstrap = require("bootstrap");
 
 function capitalize(word) {
   return word[0].toUpperCase() + word.substring(1).toLowerCase();
