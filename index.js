@@ -446,3 +446,9 @@ cannot override these now
     ["mushrooms", 7],
   ];
 }
+{
+  function reusableFunction() {
+    console.log("Hi World");
+  }
+  reusableFunction();
+}
