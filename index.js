@@ -445,6 +445,18 @@ cannot override these now
     ["pizza", 6],
     ["mushrooms", 7],
   ];
+
+  const arrayOutput = document.querySelector("#array-list");
+  for (let i = 0; i < myList.length; i++) {
+    arrayOutput.innerHTML += `<li>- ${myList[i][0]} - ${myList[i][1]}</li>`;
+  }
+
+  const priceOutput = document.querySelector("#array-price-output");
+  let totalPrice = 0;
+  for (let i = 0; i < myList.length; i++) {
+    totalPrice += myList[i][1];
+  }
+  priceOutput.innerHTML = totalPrice;
 }
 {
   function reusableFunction() {
