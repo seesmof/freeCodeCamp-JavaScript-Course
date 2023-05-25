@@ -366,3 +366,10 @@ cannot override these now
   // Only change code below this line
   const myArray = ["string", 10];
 }
+{
+  // Only change code below this line
+  const myArray = [
+    ["string", 10],
+    ["notstring", 10],
+  ];
+}
