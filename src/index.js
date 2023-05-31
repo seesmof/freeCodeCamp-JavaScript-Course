@@ -4,47 +4,19 @@ function capitalize(word) {
   return word[0].toUpperCase() + word.substring(1).toLowerCase();
 }
 
-// # COMMENTS
 {
   // JavaScript is awesome!
   /* JavaScript is awesome! */
 }
-// # VARIABLES
 {
-  var inputBox = document.getElementById("variables-alert-input-box");
-  var variablesSubmitButton = document.getElementById(
-    "variables-alert-submit-button"
-  );
-  variablesSubmitButton.addEventListener("click", function () {
-    let inputBoxValue = inputBox.value;
-    if (inputBoxValue === "") {
-      alert("Whoops... You didn't enter anything");
-      return;
-    }
-    let outputText = "You just said:  " + inputBoxValue;
-    alert(outputText);
-    inputBox.value = "";
-  });
-
   var myName;
 }
-// # ASSIGNMENTS
 {
   // calculations are performed before the variable is assigned with the value
 
   var a;
   a = 7;
-  let numberOutputParagraph = document.querySelector("#assignment-number");
-  numberOutputParagraph.innerHTML = numberOutputParagraph.innerHTML.replace(
-    "_",
-    '<span class="font-medium">_</span>'
-  );
-  numberOutputParagraph.innerHTML = numberOutputParagraph.innerHTML.replaceAll(
-    "_",
-    a
-  );
 }
-// # Assigning the Value of One Variable to Another
 {
   var a;
   a = 7;
@@ -172,11 +144,9 @@ function capitalize(word) {
     assignmentsResetInputs();
   });
 }
-// # Initializing Variables with the Assignment Operator
 {
   var a = 9;
 }
-// # Declare String Variables
 {
   var myFirstName = "John";
   var myLastName = "Doe";
@@ -212,7 +182,6 @@ function capitalize(word) {
     stringsResetInputs();
   });
 }
-// # Understanding Uninitialized Variables
 {
   var a = 5;
   var b = 10;
@@ -222,7 +191,6 @@ function capitalize(word) {
   b = b + 5;
   c = c + " String!";
 }
-// # Understanding Case Sensitivity in Variables
 {
   var studlyCapVar;
   var properCamelCase;
@@ -232,7 +200,6 @@ function capitalize(word) {
   properCamelCase = "A String";
   titleCaseOver = 9000;
 }
-// # Explore Differences Between the var and let Keywords
 {
   // if you declare a variable with var it can be overwritten without any errors
   // `let` keyword was introduced in ES6 update
@@ -251,7 +218,6 @@ let catSound = "Meow!";
 cannot override these now
 */
 }
-// # Declare a Read-Only Variable with the const Keyword
 {
   const FCC = "freeCodeCamp"; // Change this line
   let fact = "is cool!"; // Change this line
@@ -261,37 +227,29 @@ cannot override these now
   let constsParagraph = document.querySelector("#consts-paragraph");
   constsParagraph.innerHTML = FCC + " " + fact;
 }
-// # Add Two Numbers with JavaScript
 {
   const sum = 10 + 10;
 }
-// # Subtract One Number from Another with JavaScript
 {
   const difference = 45 - 33;
 }
-// # Multiply Two Numbers with JavaScript
 {
   const product = 8 * 10;
 }
-// # Divide One Number by Another with JavaScript
 {
   const quotient = 66 / 33;
 }
-// # Increment a Number with JavaScript
 {
   let myVarIncrement = 87;
   myVarIncrement++;
 }
-// # Decrement a Number with JavaScript
 {
   let myVarDecrement = 11;
   myVarDecrement--;
 }
-// # Create Decimal Numbers with JavaScript
 {
   let decimalsMyDecimal = 3.14;
 }
-// # Finding a Remainder in JavaScript
 {
   const remainder = 11 % 3;
 }

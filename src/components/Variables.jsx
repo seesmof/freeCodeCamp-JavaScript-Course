@@ -1,21 +1,33 @@
-import React, { useRef } from "react";
+import React from "react";
 
 const Variables = () => {
-  const inputBox = useRef(null);
+  const handleClick = () => {
+    let inputBoxValue = document.getElementById(
+      "variables-alert-input-box"
+    ).value;
+    if (inputBoxValue === "") {
+      alert("Whoops... You didn't enter anything");
+      return;
+    }
+    let outputText = "You just said: " + inputBoxValue;
+    alert(outputText);
+    document.getElementById("variables-alert-input-box").value = "";
+  };
+
   return (
-    <section class="section-template">
-      <h2 class="section-heading">Variables</h2>
+    <section className="section-template">
+      <h2 className="section-heading">Variables</h2>
 
       <input
         type="text"
         id="variables-alert-input-box"
-        class="input-field-underline"
+        className="input-field-underline"
         placeholder="Enter something..."
-        ref={inputBox}
       />
       <button
-        class="button-gray button mt-3"
+        className="button-gray button mt-3"
         id="variables-alert-submit-button"
+        onClick={handleClick}
       >
         Submit
       </button>
