@@ -29,37 +29,6 @@ function capitalize(word) {
 {
   var myFirstName = "John";
   var myLastName = "Doe";
-
-  let stringsFirstNameInput = document.querySelector(
-    "#string-first-name-input"
-  );
-  let stringsLastNameInput = document.querySelector("#string-last-name-input");
-  let stringsSubmitButton = document.querySelector("#string-submit-button");
-
-  function stringsResetInputs() {
-    stringsFirstNameInput.value = "";
-    stringsLastNameInput.value = "";
-  }
-
-  stringsSubmitButton.addEventListener("click", function () {
-    let firstNameValue = stringsFirstNameInput.value;
-    let lastNameValue = stringsLastNameInput.value;
-
-    if (firstNameValue === "" || lastNameValue === "") {
-      alert("Whoops... You didn't enter anything");
-      stringsResetInputs();
-      return;
-    }
-
-    let outputText =
-      "Hello, " +
-      capitalize(firstNameValue).replace(/\s+/g, " ").trim() +
-      " " +
-      capitalize(lastNameValue).replace(/\s+/g, " ").trim() +
-      "\nHow are you doing?";
-    alert(outputText);
-    stringsResetInputs();
-  });
 }
 {
   var a = 5;
@@ -102,9 +71,6 @@ cannot override these now
   let fact = "is cool!"; // Change this line
   fact = "is awesome!";
   console.log(FCC, fact); // Change this line
-
-  let constsParagraph = document.querySelector("#consts-paragraph");
-  constsParagraph.innerHTML = FCC + " " + fact;
 }
 {
   const sum = 10 + 10;
