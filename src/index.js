@@ -919,3 +919,10 @@ cannot override these now
 
   phoneticLookup("charlie");
 }
+{
+  function checkObj(obj, checkProp) {
+    // Only change code below this line
+    return checkProp in obj ? obj[checkProp] : "Not Found";
+    // Only change code above this line
+  }
+}
