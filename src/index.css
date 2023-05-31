@@ -3,7 +3,31 @@
 @tailwind utilities;
 
 @layer components {
+  .section-template {
+    @apply flex flex-col items-start border-slate-700 py-2;
+  }
+  .section-heading {
+    @apply pb-2 text-lg font-medium capitalize md:text-2xl;
+  }
+  .input-field-underline {
+    @apply border-b-2 border-slate-700 bg-inherit py-2 outline-none ring-0 duration-500 focus:border-slate-300 active:outline-none active:ring-0;
+  }
   .button {
-    @apply bg-background border-accent p-2 px-4 border rounded-full;
+    @apply inline-block rounded-md px-4 py-1 font-medium duration-300 active:scale-95;
+  }
+  .button-gray {
+    @apply bg-slate-600 hover:bg-slate-700;
+  }
+  .button-blue {
+    @apply bg-blue-600 hover:bg-blue-700;
+  }
+  .button-red {
+    @apply bg-red-600 hover:bg-red-700;
+  }
+  .button-green {
+    @apply bg-green-600 hover:bg-green-700;
+  }
+  .button-yellow {
+    @apply bg-yellow-600 hover:bg-yellow-700;
   }
 }
