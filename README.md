@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/seesmof">
-    <img src="./public/logo-small-fill.webp" alt="Logo" height="80">
+    <img src="./public/banner.png" alt="Logo" height="80">
   </a>
 
 <h1 align="center">JavaScript Algorithms and Data Structures Course - freeCodeCamp</h1>
