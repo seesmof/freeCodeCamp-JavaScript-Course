@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply bg-background border-accent p-2 px-4 border rounded-full;
+  }
+}
