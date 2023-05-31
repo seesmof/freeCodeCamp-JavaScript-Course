@@ -14,13 +14,15 @@ const Arrays = () => {
     <section class="section-template">
       <h2 class="section-heading">Arrays</h2>
 
-      <ul class="list" id="array-list"></ul>
-      <p class="pt-2 font-medium">
-        The total price is
-        <span
-          id="array-price-output"
-          class="underline underline-offset-4"
-        ></span>
+      <p className="mb-2 font-medium">My shopping list ({myList.length}):</p>
+      <p className="">
+        {myList.map((item) => {
+          return (
+            <div>
+              {item[0]} - {item[1]}
+            </div>
+          );
+        })}
       </p>
     </section>
   );
