@@ -2,6 +2,7 @@ import Arrays from "./components/Arrays";
 import Assignments from "./components/Assignments";
 import Constants from "./components/Constants";
 import Hero from "./components/Hero";
+import MultidimensionalArrays from "./components/MultidimensionalArrays";
 import StringVariables from "./components/StringVariables";
 import Variables from "./components/Variables";
 
