@@ -24,6 +24,7 @@ const Assignments = () => {
     const result = firstNumber + secondNumber;
     const output = firstNumber + " + " + secondNumber + " = " + result;
     alert(output);
+    resetValues();
   };
   const subtraction = () => {
     const firstNumber = Number(inputBoxOne.current.value);
@@ -41,6 +42,7 @@ const Assignments = () => {
     const result = firstNumber - secondNumber;
     const output = firstNumber + " - " + secondNumber + " = " + result;
     alert(output);
+    resetValues();
   };
   const multiplication = () => {
     const firstNumber = Number(inputBoxOne.current.value);
@@ -58,6 +60,7 @@ const Assignments = () => {
     const result = firstNumber * secondNumber;
     const output = firstNumber + " * " + secondNumber + " = " + result;
     alert(output);
+    resetValues();
   };
   const division = () => {
     const firstNumber = Number(inputBoxOne.current.value);
@@ -75,6 +78,7 @@ const Assignments = () => {
     const result = firstNumber / secondNumber;
     const output = firstNumber + " / " + secondNumber + " = " + result;
     alert(output);
+    resetValues();
   };
 
   return (
