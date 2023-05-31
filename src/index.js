@@ -813,3 +813,15 @@ cannot override these now
   cc("K");
   cc("A");
 }
+{
+  const myDog = {
+    // Only change code below this line
+
+    name: "Happy Coder",
+    legs: 4,
+    tails: 1,
+    friends: ["freeCodeCamp Campers"],
+
+    // Only change code above this line
+  };
+}
