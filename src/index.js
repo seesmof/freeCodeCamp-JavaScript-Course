@@ -1245,6 +1245,7 @@ cannot override these now
     };
     // Only change code below this line
     Object.freeze(MATH_CONSTANTS);
+    Object.
 
     // Only change code above this line
     try {
