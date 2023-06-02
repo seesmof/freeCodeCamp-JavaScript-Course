@@ -104,7 +104,7 @@ const Assignments = () => {
             ref={inputBoxTwo}
           />
         </div>
-        <div class="mt-3 flex flex-row flex-wrap items-center justify-center gap-1 sm:gap-2">
+        <div class="mt-3 flex flex-row flex-wrap items-center gap-1 sm:gap-2">
           <button
             class="button-blue button"
             id="addition-button"
