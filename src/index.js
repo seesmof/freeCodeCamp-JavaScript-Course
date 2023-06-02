@@ -1126,6 +1126,16 @@ cannot override these now
         }
       }
     }
+    let iterCounter = 1;
+    for (let i = 0; i < contacts.length; i++) {
+      if (iterCounter === contacts.length) {
+        return "No such contact";
+      }
+      if (contacts[i].firstName !== name) {
+        iterCounter++;
+        continue;
+      }
+    }
     // Only change code above this line
   }
 
