@@ -9,10 +9,39 @@ const Arrays = () => {
     ["pizza", 6],
     ["mushrooms", 7],
   ];
-  const randomlyGeneratedArray = [];
+
+  let randomlyGeneratedArray = [];
   for (let i = 0; i < 10; i++) {
-    randomlyGeneratedArray.push(Math.floor(Math.random() * 10) + " ");
+    randomlyGeneratedArray.push(Math.floor(Math.random() * 10));
   }
+
+  const sortArray = () => {
+    randomlyGeneratedArray.sort();
+    alert("Sorted!\n" + randomlyGeneratedArray);
+  };
+
+  const reverseArray = () => {
+    randomlyGeneratedArray.reverse();
+    alert("Reversed!\n" + randomlyGeneratedArray);
+  };
+
+  const generateArray = () => {
+    randomlyGeneratedArray = [];
+    for (let i = 0; i < 10; i++) {
+      randomlyGeneratedArray.push(Math.floor(Math.random() * 10));
+    }
+    alert("Generated!\n" + randomlyGeneratedArray);
+  };
+
+  const copyArray = () => {
+    navigator.clipboard.writeText(randomlyGeneratedArray.join(""));
+    alert("Copied!");
+  };
+
+  const clearArray = () => {
+    randomlyGeneratedArray = [];
+    alert("Cleared!");
+  };
 
   return (
     <section class="section-template">
@@ -38,17 +67,24 @@ const Arrays = () => {
           <p className="mb-2 font-medium">Array Methods</p>
 
           <div className="flex flex-col gap-3">
-            <p className="font-medium">
-              Randomly Generated Array:{" "}
-              <span className="font-normal">{randomlyGeneratedArray}</span>
-              <div className="flex flex-row flex-wrap gap-1">
-                <button className="button button-green">Sort</button>
-                <button className="button button-yellow">Reverse</button>
-                <button className="button button-red">Generate</button>
-                <button className="button button-blue">Copy</button>
-                <button className="button button-gray">Clear</button>
-              </div>
-            </p>
+            <p className="">Array: {randomlyGeneratedArray}</p>
+            <div className="flex flex-row flex-wrap gap-1">
+              <button className="button button-green" onClick={sortArray}>
+                Sort
+              </button>
+              <button className="button button-yellow" onClick={reverseArray}>
+                Reverse
+              </button>
+              <button className="button button-red" onClick={generateArray}>
+                Generate
+              </button>
+              <button className="button button-blue" onClick={copyArray}>
+                Copy
+              </button>
+              <button className="button button-gray" onClick={clearArray}>
+                Clear
+              </button>
+            </div>
           </div>
         </article>
       </div>
