@@ -30,18 +30,30 @@ const ContactsLookup = () => {
     },
   ];
 
-  const handleCopyClick = (value) => {
-    navigator.clipboard.writeText(value);
-  };
-
   const ContactCard = ({ contact }) => {
+    const handleCopyClick = (value) => {
+      navigator.clipboard.writeText(value);
+    };
+
+    const [isFilled, setIsFilled] = useState(false);
+    const handleHeartButtonClick = () => {
+      setIsFilled(!isFilled);
+    };
+
     return (
       <div className="col-span-1 flex flex-col gap-4 rounded-lg bg-slate-800 p-4 text-slate-300">
         <div className="flex flex-row items-center justify-between text-slate-50">
           <h2 className="text-xl font-bold">
             {contact.firstName} {contact.lastName}
           </h2>
-          <AiOutlineHeart className="cursor-pointer text-2xl" />
+          <button
+            className={`cursor-pointer text-2xl duration-500 ease-in-out hover:text-red-500 ${
+              isFilled ? "text-red-500" : ""
+            }`}
+            onClick={handleHeartButtonClick}
+          >
+            {isFilled ? <AiFillHeart /> : <AiOutlineHeart />}
+          </button>
         </div>
         <div className="flex flex-col gap-2">
           <p
