@@ -1,6 +1,7 @@
 import Arrays from "./components/Arrays";
 import Assignments from "./components/Assignments";
 import Constants from "./components/Constants";
+import ContactsLookup from "./components/ContactsLookup";
 import Hero from "./components/Hero";
 import MultidimensionalArrays from "./components/MultidimensionalArrays";
 import StringVariables from "./components/StringVariables";
@@ -17,6 +18,7 @@ function App() {
           <StringVariables />
           <Constants />
           <Arrays />
+          <ContactsLookup />
         </main>
       </div>
     </>

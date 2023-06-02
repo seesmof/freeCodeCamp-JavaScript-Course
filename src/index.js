@@ -249,18 +249,6 @@ cannot override these now
     ["pizza", 6],
     ["mushrooms", 7],
   ];
-
-  const arrayOutput = document.querySelector("#array-list");
-  for (let i = 0; i < myList.length; i++) {
-    arrayOutput.innerHTML += `<li>- ${myList[i][0]} - ${myList[i][1]}</li>`;
-  }
-
-  const priceOutput = document.querySelector("#array-price-output");
-  let totalPrice = 0;
-  for (let i = 0; i < myList.length; i++) {
-    totalPrice += myList[i][1];
-  }
-  priceOutput.innerHTML = totalPrice;
 }
 {
   function reusableFunction() {
@@ -1130,12 +1118,11 @@ cannot override these now
   function lookUpProfile(name, prop) {
     // Only change code below this line
     for (let i = 0; i < contacts.length; i++) {
-      for (let j = 0; j < contacts[i].length; j++) {
-        if (
-          contacts[i].firstName === name &&
-          contacts[i].hasOwnProperty(prop)
-        ) {
+      if (contacts[i].firstName === name) {
+        if (contacts[i].hasOwnProperty(prop)) {
           return contacts[i][prop];
+        } else {
+          return "No such property";
         }
       }
     }
