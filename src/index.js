@@ -1223,3 +1223,18 @@ cannot override these now
     return i;
   }
 }
+{
+  const s = [5, 7, 2];
+  function editInPlace() {
+    // Only change code below this line
+    // Using s = [2, 5, 7] would be invalid
+    s.shift();
+    s.shift();
+    s.shift();
+    s.unshift(2);
+    s.push(5);
+    s.push(7);
+    // Only change code above this line
+  }
+  editInPlace();
+}
