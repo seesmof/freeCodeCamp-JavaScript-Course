@@ -1245,7 +1245,6 @@ cannot override these now
     };
     // Only change code below this line
     Object.freeze(MATH_CONSTANTS);
-    Object.freeze(MATH_CONSTANTS.PI);
 
     // Only change code above this line
     try {
@@ -1256,4 +1255,6 @@ cannot override these now
     return MATH_CONSTANTS.PI;
   }
   const PI = freezeObj();
+}
+{
 }
