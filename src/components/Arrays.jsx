@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const Arrays = () => {
   const myList = [
@@ -15,32 +15,33 @@ const Arrays = () => {
     randomlyGeneratedArray.push(Math.floor(Math.random() * 10));
   }
 
+  const [array, setArray] = useState(randomlyGeneratedArray);
+
   const sortArray = () => {
-    randomlyGeneratedArray.sort();
-    alert("Sorted!\n" + randomlyGeneratedArray);
+    let newArray = randomlyGeneratedArray.sort();
+    setArray(newArray);
   };
 
   const reverseArray = () => {
-    randomlyGeneratedArray.reverse();
-    alert("Reversed!\n" + randomlyGeneratedArray);
+    let newArray = randomlyGeneratedArray.reverse();
+    setArray(newArray);
   };
 
   const generateArray = () => {
-    randomlyGeneratedArray = [];
+    let newArray = [];
     for (let i = 0; i < 10; i++) {
-      randomlyGeneratedArray.push(Math.floor(Math.random() * 10));
+      newArray.push(Math.floor(Math.random() * 10));
     }
-    alert("Generated!\n" + randomlyGeneratedArray);
+    setArray(newArray);
   };
 
   const copyArray = () => {
     navigator.clipboard.writeText(randomlyGeneratedArray.join(""));
-    alert("Copied!");
   };
 
   const clearArray = () => {
     randomlyGeneratedArray = [];
-    alert("Cleared!");
+    setArray(randomlyGeneratedArray);
   };
 
   return (
