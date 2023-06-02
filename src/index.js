@@ -1336,7 +1336,7 @@ cannot override these now
 {
   function removeFirstTwo(list) {
     // Only change code below this line
-    const shorterList = [, , ...list]; // Change this line
+    const [a, b, ...shorterList] = list;
     // Only change code above this line
     return shorterList;
   }
