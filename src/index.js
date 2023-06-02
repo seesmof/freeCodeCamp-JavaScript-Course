@@ -1150,3 +1150,8 @@ cannot override these now
     // Only change code above this line
   }
 }
+{
+  function randomWholeNum() {
+    return Math.floor(Math.random() * 10);
+  }
+}
