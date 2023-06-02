@@ -1160,3 +1160,10 @@ cannot override these now
     return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
   }
 }
+{
+  function convertToInteger(str) {
+    return parseInt(str);
+  }
+
+  convertToInteger("56");
+}
