@@ -17,30 +17,30 @@ const Arrays = () => {
 
   const sortArray = () => {
     randomlyGeneratedArray.sort();
-    alert(`Your array is now: ${randomlyGeneratedArray}`);
+    alert(`Sorted! \nYour array is now: ${randomlyGeneratedArray}`);
   };
 
   const reverseArray = () => {
     randomlyGeneratedArray.reverse();
-    const alertMessage = `Reversed! \nYour array is now: ${randomlyGeneratedArray}`;
-
-    alert(alertMessage);
+    alert(`Reversed! \nYour array is now: ${randomlyGeneratedArray}`);
   };
 
   const generateArray = () => {
+    randomlyGeneratedArray = [];
     for (let i = 0; i < 10; i++) {
       randomlyGeneratedArray.push(Math.floor(Math.random() * 10));
     }
-    alert(`Your array is now: ${randomlyGeneratedArray}`);
+    alert(`Regenerated! \nYour array is now: ${randomlyGeneratedArray}`);
   };
 
   const copyArray = () => {
     navigator.clipboard.writeText(randomlyGeneratedArray.join(""));
+    alert(`Copied! \nYour array is: ${randomlyGeneratedArray}`);
   };
 
   const clearArray = () => {
     randomlyGeneratedArray = [];
-    alert(`Your array is now: ${randomlyGeneratedArray}`);
+    alert(`Cleared! \nYour array is now: ${randomlyGeneratedArray}`);
   };
 
   return (
