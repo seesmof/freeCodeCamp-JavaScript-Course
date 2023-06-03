@@ -15,24 +15,23 @@ const Arrays = () => {
     randomlyGeneratedArray.push(Math.floor(Math.random() * 10));
   }
 
-  const [array, setArray] = useState(randomlyGeneratedArray);
-
   const sortArray = () => {
-    let newArray = randomlyGeneratedArray.sort();
-    setArray(newArray);
+    randomlyGeneratedArray.sort();
+    alert(`Your array is now: ${randomlyGeneratedArray}`);
   };
 
   const reverseArray = () => {
-    let newArray = randomlyGeneratedArray.reverse();
-    setArray(newArray);
+    randomlyGeneratedArray.reverse();
+    const alertMessage = `Reversed! \nYour array is now: ${randomlyGeneratedArray}`;
+
+    alert(alertMessage);
   };
 
   const generateArray = () => {
-    let newArray = [];
     for (let i = 0; i < 10; i++) {
-      newArray.push(Math.floor(Math.random() * 10));
+      randomlyGeneratedArray.push(Math.floor(Math.random() * 10));
     }
-    setArray(newArray);
+    alert(`Your array is now: ${randomlyGeneratedArray}`);
   };
 
   const copyArray = () => {
@@ -41,7 +40,7 @@ const Arrays = () => {
 
   const clearArray = () => {
     randomlyGeneratedArray = [];
-    setArray(randomlyGeneratedArray);
+    alert(`Your array is now: ${randomlyGeneratedArray}`);
   };
 
   return (
