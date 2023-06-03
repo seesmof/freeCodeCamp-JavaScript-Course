@@ -1378,3 +1378,12 @@ cannot override these now
 
   const failuresList = makeList(result.failure);
 }
+{
+  var createPerson = (name, age, gender) => {
+    // Only change code below this line
+    return { name, age, gender };
+    // Only change code above this line
+  };
+
+  var createPerson = (name, age, gender) => ({ name, age, gender });
+}
