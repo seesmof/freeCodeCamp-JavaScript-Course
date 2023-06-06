@@ -145,8 +145,18 @@ const MultidimensionalArrays = () => {
       </div>
 
       <div className="flex flex-row items-center gap-2">
-        <button className="button bg-blue-600 text-blue-100">Start solo</button>
-        <button className="button bg-yellow-500 text-yellow-100 hover:bg-yellow-600">
+        <button
+          disabled
+          title="Start solo | IN DEVELOPMENT"
+          className="button bg-blue-600 text-blue-100"
+        >
+          Start solo
+        </button>
+        <button
+          disabled
+          title="Start with AI | IN DEVELOPMENT"
+          className="button bg-yellow-500 text-yellow-100 hover:bg-yellow-600"
+        >
           Start with AI
         </button>
       </div>
