@@ -7,6 +7,7 @@ import { BsCircle } from "react-icons/bs";
 const MultidimensionalArrays = () => {
   const [winner, setWinner] = useState("");
   const [gameOver, setGameOver] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
 
   const [board, setBoard] = useState([
     ["", "", ""],
@@ -145,14 +146,34 @@ const MultidimensionalArrays = () => {
       </div>
 
       <div className="mb-2 flex flex-col gap-2">
-        <div className="flex flex-row items-center gap-2">
-          <div className="flex items-center gap-1 font-medium">
-            {cross ? (
-              <span className="text-xl text-red-500">X</span>
+        <div className="flex flex-col gap-1 pb-2">
+          <div
+            className={`flex items-center gap-1 text-xl font-medium ${
+              winner ? "" : "h-7 w-24 rounded-sm bg-slate-800"
+            }`}
+          >
+            {winner && `Winner is ${winner}`}
+            {/* Winner is {winner} */}
+          </div>
+
+          <div
+            className={`flex items-center gap-1 font-medium ${
+              gameOver ? "" : "h-7 w-24 rounded-sm bg-slate-800"
+            }`}
+          >
+            {gameOver ? (
+              cross ? (
+                <div className="">
+                  <span className="text-xl text-red-500">X</span> moves
+                </div>
+              ) : (
+                <div className="">
+                  <span className="text-xl text-blue-500">O</span> moves
+                </div>
+              )
             ) : (
-              <span className="text-xl text-blue-500">O</span>
+              <span>&nbsp;</span>
             )}{" "}
-            moves
           </div>
         </div>
       </div>
