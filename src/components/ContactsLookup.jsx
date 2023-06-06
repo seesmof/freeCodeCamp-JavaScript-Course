@@ -28,7 +28,37 @@ const ContactsLookup = () => {
       number: "unknown",
       likes: ["JavaScript", "Gaming", "Foxes"],
     },
+    {
+      firstName: "John",
+      lastName: "Doe",
+      number: "1234567890",
+      likes: ["Coffee", "Reading", "Travel"],
+    },
+    {
+      firstName: "Jane",
+      lastName: "Smith",
+      number: "9876543210",
+      likes: ["Art", "Yoga", "Nature"],
+    },
+    {
+      firstName: "Michael",
+      lastName: "Johnson",
+      number: "5555555555",
+      likes: ["Basketball", "Music", "Photography"],
+    },
   ];
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const filteredContacts = contacts.filter((contact) =>
+    `${contact.firstName} ${contact.lastName}`
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase())
+  );
 
   const ContactCard = ({ contact }) => {
     const handleCopyClick = (value) => {
@@ -73,15 +103,27 @@ const ContactsLookup = () => {
 
   return (
     <>
-      <section class="section-template">
-        <h2 class="section-heading">Contacts Lookup</h2>
+      <section className="section-template">
+        <h2 className="section-heading">Contacts Lookup</h2>
+
+        <input
+          type="text"
+          className="input-field-underline mb-4 w-full"
+          placeholder="Search..."
+          aria-label="Search..."
+          aria-describedby="search-addon"
+          id="search-addon"
+          name="search"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
 
         <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {contacts.map((contact) => (
+          {filteredContacts.map((contact) => (
             <ContactCard key={contact.number} contact={contact} />
           ))}
         </div>
-      </section>{" "}
+      </section>
     </>
   );
 };
