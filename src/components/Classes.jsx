@@ -3,6 +3,8 @@ import { RxCross1, RxPencil1 } from "react-icons/rx";
 import { BiCake } from "react-icons/bi";
 import { AiOutlineMail } from "react-icons/ai";
 
+// TODO: Add a box form for adding new users. Add different image for each user
+
 const Classes = () => {
   class User {
     constructor(name, age, email) {
