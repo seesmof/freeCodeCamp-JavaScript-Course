@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { BsPencil } from "react-icons/bs";
+import { RxCross1 } from "react-icons/rx";
 
 const Classes = () => {
   class User {
@@ -10,8 +12,8 @@ const Classes = () => {
   }
 
   const users = [
-    new User("XXXX", 30, "XXXXXXXXXXXXXX"),
-    new User("XXXXX", 25, "YYYYYYYYYYYYYYY"),
+    new User("Jane Doe", 30, "jane@doe.com"),
+    new User("John Doe", 25, "john@doe.com"),
   ];
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -25,8 +27,22 @@ const Classes = () => {
 
   const userCard = (name, age, email) => (
     <>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <div className="col-span-1 bg-slate-800 p-4"></div>
+      <div className="col-span-1 flex flex-row gap-3 rounded-lg bg-slate-800 p-4">
+        <img
+          src="https://picsum.photos/200/300"
+          alt="personal avatar image"
+          className="h-12 w-12 rounded-full"
+        />
+
+        <div className="flex w-full flex-col">
+          <div className="flex flex-row items-center justify-between">
+            <h2 className="text-xl font-bold">{name}</h2>
+            <div className="flex flex-row gap-2">
+              <BsPencil className="text-lg text-slate-300" />
+              <RxCross1 className="text-lg text-slate-300" />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
