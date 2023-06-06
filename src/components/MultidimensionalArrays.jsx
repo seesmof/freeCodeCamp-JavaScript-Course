@@ -144,17 +144,24 @@ const MultidimensionalArrays = () => {
         </button>
       </div>
 
+      <div className="mb-2 flex flex-col gap-2">
+        <div className="flex flex-row items-center gap-2">
+          <div className="flex items-center gap-1 font-medium">
+            {cross ? (
+              <span className="text-xl text-red-500">X</span>
+            ) : (
+              <span className="text-xl text-blue-500">O</span>
+            )}{" "}
+            moves
+          </div>
+        </div>
+      </div>
       <div className="flex flex-row items-center gap-2">
-        <button
-          disabled
-          title="Start solo | IN DEVELOPMENT"
-          className="button bg-blue-600 text-blue-100"
-        >
+        <button title="Start solo" className="button bg-blue-600 text-blue-100">
           Start solo
         </button>
         <button
-          disabled
-          title="Start with AI | IN DEVELOPMENT"
+          title="Start with AI"
           className="button bg-yellow-500 text-yellow-100 hover:bg-yellow-600"
         >
           Start with AI
