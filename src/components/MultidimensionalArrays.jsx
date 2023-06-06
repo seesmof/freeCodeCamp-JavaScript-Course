@@ -151,15 +151,16 @@ const MultidimensionalArrays = () => {
             className={`flex items-center gap-1 text-xl font-medium ${
               winner ? "" : "h-7 w-24 rounded-sm bg-slate-800"
             }`}
+            title="Start the game to unhide the contents"
           >
             {winner && `Winner is ${winner}`}
-            {/* Winner is {winner} */}
           </div>
 
           <div
             className={`flex items-center gap-1 font-medium ${
-              gameOver ? "" : "h-7 w-24 rounded-sm bg-slate-800"
+              gameOver ? "" : "h-7 w-16 rounded-sm bg-slate-800"
             }`}
+            title="Start the game to unhide the contents"
           >
             {gameOver ? (
               cross ? (
