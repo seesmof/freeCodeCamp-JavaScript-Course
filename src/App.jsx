@@ -1,5 +1,6 @@
 import Arrays from "./components/Arrays";
 import Assignments from "./components/Assignments";
+import Classes from "./components/Classes";
 import Constants from "./components/Constants";
 import ContactsLookup from "./components/ContactsLookup";
 import Hero from "./components/Hero";
@@ -19,6 +20,8 @@ function App() {
           <Constants />
           <Arrays />
           <ContactsLookup />
+          <MultidimensionalArrays />
+          <Classes />
         </main>
       </div>
     </>

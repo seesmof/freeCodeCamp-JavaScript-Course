@@ -30,4 +30,10 @@
   .button-yellow {
     @apply bg-yellow-600 hover:bg-yellow-700;
   }
+  .button-orange {
+    @apply bg-orange-600 hover:bg-orange-700;
+  }
+  .tictactoe-button {
+    @apply col-span-1 h-full w-full bg-slate-900 p-2;
+  }
 }
