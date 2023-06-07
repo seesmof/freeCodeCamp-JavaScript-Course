@@ -21,11 +21,28 @@
         <section class="section-template">
           <h2 class="section-heading">Fetch API</h2>
 
-          <p>Synchronous programming is code execution line by line.</p>
+          <div class="flex flex-col gap-2">
+            <p>
+              Synchronous programming is code execution line by line. The
+              process we have with our example is we create sort of a branch of
+              our code when the pizza declaration is executed.
+            </p>
+            <p>SetTimeout is an asynchronous function.</p>
+          </div>
 
           <script>
-            const pizza = "🍕";
-            console.log(`${pizza} pizza`);
+            let pizza;
+
+            const orderPizza = () => {
+              console.log("Order pizza");
+              setTimeout(() => {
+                pizza = "Pepperoni";
+              }, 1000);
+              console.log("Pizza was ordered");
+            };
+
+            orderPizza();
+            console.log(`Eating ${pizza ? pizza : "some kind of pizza"}`);
           </script>
         </section>
       </div>
