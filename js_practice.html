@@ -55,6 +55,19 @@
               console.log("Clicked");
             });
 
+            const thingOne = (callback) => callback();
+            const thingTwo = (callback) => callback();
+            const thingThree = (callback) => callback();
+
+            // CALLBACK HELL or SIDEWAYS PYRAMID
+            thingOne(() => {
+              thingTwo(() => {
+                thingThree(() => {
+                  console.log("Done");
+                });
+              });
+            });
+
             const orderPizza = (callback) => {
               setTimeout(() => {
                 const pizza = "Pepperoni";
