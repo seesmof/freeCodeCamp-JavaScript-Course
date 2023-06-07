@@ -4,7 +4,7 @@
 
 @layer components {
   .section-template {
-    @apply flex flex-col items-start border-slate-700 py-2;
+    @apply flex flex-col items-start py-2;
   }
   .section-heading {
     @apply pb-2 text-lg font-medium capitalize md:text-2xl;
