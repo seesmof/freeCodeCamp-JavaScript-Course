@@ -21,7 +21,7 @@
         <!-- TODO: Make a separate folder with all the pages and create pages for each topic, because one page for all the scripts just won't be enough -->
 
         <section class="section-template">
-          <h2 class="section-heading">Fetch API</h2>
+          <h2 class="section-heading">asynchronous programming</h2>
 
           <div class="flex flex-col gap-2">
             <p>
@@ -60,6 +60,20 @@
           <script>
             window.addEventListener("click", () => {
               console.log("Clicked");
+            });
+
+            const doSomeMaths = (numberOne, numberTwo, callback) => {
+              let sum = numberOne;
+              setTimeout(() => {
+                for (let i = numberOne; i <= numberTwo; i++) {
+                  sum *= i;
+                }
+                callback(sum);
+              }, 2000);
+            };
+
+            const result = doSomeMaths(2, 30, (sum) => {
+              console.log(sum);
             });
 
             const thingOne = (callback) => callback();
