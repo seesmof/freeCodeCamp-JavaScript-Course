@@ -119,7 +119,7 @@ const Classes = () => {
     inputAge.current.value = "";
     inputEmail.current.value = "";
     formSubmitted(true);
-    users.push(data);
+    users.push((prev) => new User(prev.name, prev.age, prev.email));
   };
 
   return (
