@@ -37,11 +37,13 @@
               console.log("Order pizza");
               setTimeout(() => {
                 pizza = "Pepperoni";
+                console.log(`${pizza} is ready`);
               }, 1000);
               console.log("Pizza was ordered");
             };
 
             orderPizza();
+            console.log("Calling Robo");
             console.log(`Eating ${pizza ? pizza : "some kind of pizza"}`);
           </script>
         </section>
