@@ -76,6 +76,17 @@
               console.log(sum);
             });
 
+            const callInRandomTime = (callback) => {
+              const randomTime = Math.floor(Math.random() * 5) + 1;
+              setTimeout(() => {
+                callback();
+              }, randomTime * 1000);
+            };
+
+            callInRandomTime(() => {
+              console.log("Called in random time");
+            });
+
             const thingOne = (callback) => callback();
             const thingTwo = (callback) => callback();
             const thingThree = (callback) => callback();
