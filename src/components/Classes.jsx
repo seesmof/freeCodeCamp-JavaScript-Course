@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { RxCross1, RxPencil1 } from "react-icons/rx";
 import { BiCake } from "react-icons/bi";
 import { AiOutlineMail, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
@@ -54,6 +54,10 @@ const Classes = () => {
 
   const [isFilled, setIsFilled] = useState(false);
 
+  const handleHeartButtonClick = () => {
+    setIsFilled(!isFilled);
+  };
+
   const userCard = (name, age, email) => (
     <>
       <div className="col-span-1 flex flex-row gap-4 overflow-hidden rounded-lg bg-slate-800 p-4">
@@ -65,14 +69,10 @@ const Classes = () => {
         <div className="flex flex-1 flex-col">
           <div className="flex flex-row items-center justify-between pb-2">
             <h2 className="text-xl font-bold">{name}</h2>
-            <div className="flex flex-row items-center gap-2">
-              {/* <RxPencil1 className="text-slate-500 text-lg" /> */}
-              <AiOutlineHeart className="cursor-pointer text-lg text-slate-500 transition-all duration-500 ease-in-out hover:text-red-500" />
-              <RxCross1
-                className="cursor-pointer text-lg text-red-500"
-                onClick={() => removeUser(name)}
-              />
-            </div>
+            <RxCross1
+              className="cursor-pointer text-lg text-red-500 duration-500 hover:text-red-600"
+              onClick={() => removeUser(name)}
+            />
           </div>
           <div className="flex flex-row gap-4 font-medium">
             <div
@@ -97,10 +97,79 @@ const Classes = () => {
     </>
   );
 
+  const inputUsername = useRef(null);
+  const inputAge = useRef(null);
+  const inputEmail = useRef(null);
+  const formSubmitted = useState(false);
+
+  const [data, setData] = useState({
+    username: "",
+    age: "",
+    email: "",
+  });
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setData({
+      username: inputUsername.current.value,
+      age: inputAge.current.value,
+      email: inputEmail.current.value,
+    });
+    inputUsername.current.value = "";
+    inputAge.current.value = "";
+    inputEmail.current.value = "";
+    formSubmitted(true);
+    users.push(data);
+  };
+
   return (
     <>
       <section className="section-template">
         <h2 className="section-heading">Classes</h2>
+
+        <div className="flex w-full flex-row gap-6">
+          <div className="w-full lg:w-1/2">
+            <div className="flex flex-col rounded-lg bg-slate-800 p-3">
+              <h3 className="py-2 text-lg font-medium capitalize lg:text-xl">
+                add new user
+              </h3>
+
+              <div className="flex flex-col gap-2">
+                <input
+                  type="text"
+                  className="input-field-underline"
+                  placeholder="Full Name..."
+                  ref={inputUsername}
+                />
+                <input
+                  type="text"
+                  className="input-field-underline"
+                  placeholder="Age..."
+                  ref={inputAge}
+                />
+                <input
+                  type="text"
+                  className="input-field-underline"
+                  placeholder="Email..."
+                  ref={inputEmail}
+                />
+              </div>
+
+              <button
+                className="button button-green mt-4 lg:mt-6"
+                onClick={handleFormSubmit}
+              >
+                Add User
+              </button>
+            </div>
+          </div>
+          <div className="hidden w-1/2 flex-col lg:flex">
+            <h3 className="mb-4 text-xl font-medium">Preview</h3>
+            {formSubmitted
+              ? userCard(data.username, data.age, data.email)
+              : null}
+          </div>
+        </div>
 
         <input
           type="text"
