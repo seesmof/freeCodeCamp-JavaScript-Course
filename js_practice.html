@@ -34,22 +34,39 @@
             </p>
             <p>
               In our code we don't want a function to complete multiple things.
+              So asynchronous programming is making our functions do their stuff
+              on sort of a separate branch or a timeline, so to say.
+            </p>
+            <p>
+              We created an asynchronous function where we wait for 1 second to
+              create our pizza and then make a callback to notify our customer,
+              but do we actually need to pass our callback as an argument? Not
+              sure yet.
+            </p>
+            <p>
+              Also, one more interesting thing is that if we remove the
+              <em>let</em> declaration of our pizza variable, we simply skip the
+              last line where we eat the pizza which is weird and I dont get it.
             </p>
           </div>
 
           <script>
-            let pizza;
+            window.addEventListener("click", () => {
+              console.log("Clicked");
+            });
 
-            const orderPizza = () => {
-              console.log("Order pizza");
+            const orderPizza = (callback) => {
               setTimeout(() => {
-                pizza = "Pepperoni";
-                console.log(`${pizza} is ready`);
-              }, 1000);
-              console.log("Pizza was ordered");
+                const pizza = "Pepperoni";
+                callback(pizza);
+              }, 2000);
             };
 
-            orderPizza();
+            const pizzaReady = (pizza) => {
+              console.log(`Eat the ${pizza}`);
+            };
+
+            orderPizza(pizzaReady);
             console.log("Calling Robo");
             console.log(`Eating ${pizza ? pizza : "some kind of pizza"}`);
           </script>
