@@ -39,25 +39,41 @@
           <h2 class="section-heading">Promises</h2>
 
           <div class="flex flex-col gap-2">
-            <div class="promise" id="useThis"></div>
+            <div
+              class="font-medium text-green-600"
+              id="gotDataSuccessfully"
+            ></div>
+            <div class="font-medium text-red-600" id="didntGetData"></div>
           </div>
 
           <script>
-            const outputContainer = document.getElementById("useThis");
-
-            getWeather(displayIcon);
-
-            const displayIcon = (weather) => {
-              if (weather === "Sunny") outputContainer.innerHTML = "☀️";
-              if (weather === "Rainy") outputContainer.innerHTML = "🌧️";
-              if (weather === "Cloudy") outputContainer.innerHTML = "☁️";
+            const gotDataSuccessfully = document.getElementById(
+              "gotDataSuccessfully"
+            );
+            const didntGetData = document.getElementById("didntGetData");
+            const getWeather = () => {
+              return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve({
+                    city: "London",
+                    country: "UK",
+                    continent: "Europe",
+                    temperature: 20,
+                    humidity: 40,
+                  });
+                }, 1000);
+              });
             };
 
-            function getWeather(callback) {
-              setTimeout(() => {
-                callback("Sunny");
-              }, 1000);
-            }
+            getWeather()
+              .then((data) => {
+                console.log(data);
+                gotDataSuccessfully.innerHTML = `${data.city}, ${data.country}, ${data.continent}, ${data.temperature}, ${data.humidity}`;
+              })
+              .catch((error) => {
+                console.log(error);
+                didntGetData.innerHTML = error;
+              });
           </script>
         </section>
       </div>
