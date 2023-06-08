@@ -60,7 +60,7 @@
             const getData = async (time) => {
               return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                  resolve(46);
+                  resolve(Math.floor(Math.random() * 100));
                 }, time);
               });
             };
