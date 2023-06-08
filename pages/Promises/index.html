@@ -44,14 +44,17 @@
 
           <script>
             const outputContainer = document.getElementById("useThis");
+
+            getWeather(weatherRecieved);
+
             const weatherRecieved = (data) => {
               let weather = data;
               outputContainer.innerHTML = weather;
             };
 
-            function getWeather() {
+            function getWeather(callback) {
               setTimeout(() => {
-                weatherRecieved("Sunny");
+                callback("Sunny");
               }, 1000);
             }
           </script>
