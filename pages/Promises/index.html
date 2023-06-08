@@ -39,17 +39,19 @@
           <h2 class="section-heading">Promises</h2>
 
           <div class="flex flex-col gap-2">
-            <p>lorem</p>
+            <div class="promise" id="useThis"></div>
           </div>
 
           <script>
             let weather = getWeather();
-            console.log(weather);
+            const outputContainer = document.getElementById("useThis");
+            outputContainer.innerHTML = weather;
 
             function getWeather() {
               setTimeout(() => {
-                return "sunny";
-              }, 100);
+                weather = "Weather: " + Math.random();
+                outputContainer.innerHTML = weather;
+              }, 1000);
             }
           </script>
         </section>
