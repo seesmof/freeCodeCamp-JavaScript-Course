@@ -48,27 +48,44 @@
               part is that those functions look and work as if they were
               synchronous. So in async function we wait for each event to finish
               before continuing the execution, I already checked that. Now lets
-              find out a bit more from the video.
+              find out a bit more from the video. Oh, hold up. A few small
+              details. You can only use await keyword in the async functions.
+              When such function is called, it is executed in the background and
+              the program flow is immediately returned to the caller place.
             </p>
+            <p></p>
           </div>
 
           <script>
-            const getData = () => {
+            const getData = async () => {
               return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                  resolve("Data retrieved");
-                }, 1000);
+                  resolve(46);
+                }, 100);
               });
             };
 
-            async function getDataAsync() {
-              const data = await getData();
-              console.log(data);
-            }
+            const main = async () => {
+              try {
+                const data = await getData();
+                console.log(data);
+              } catch (error) {
+                console.log(error);
+              }
+            };
 
-            console.log("Hi");
-            getDataAsync();
-            console.log("Hi");
+            const start = async () => {
+              getData()
+                .then((data) => {
+                  console.log(data);
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            };
+
+            main();
+            start();
           </script>
         </section>
       </div>
