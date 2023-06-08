@@ -54,28 +54,12 @@
 
             const getWeather = () => {
               return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                  resolve({
-                    city: "London",
-                    country: "UK",
-                    continent: "Europe",
-                    temperature: 20,
-                    humidity: 40,
-                  });
-                  // reject("Something went wrong");
-                }, 1000);
+                setTimeout(() => {});
               });
             };
 
-            getWeather()
-              .then((data) => {
-                console.log(data);
-                gotDataSuccessfully.innerHTML = `${data.city}, ${data.country}, ${data.continent}, ${data.temperature}, ${data.humidity}`;
-              })
-              .catch((error) => {
-                console.log(error);
-                didntGetData.innerHTML = error;
-              });
+            const promise = getWeather();
+            console.log(promise);
           </script>
         </section>
       </div>
