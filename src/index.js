@@ -1412,12 +1412,21 @@ cannot override these now
   console.log(carrot.name); // Should display 'carrot'
 }
 {
-  // Only change code below this line
+  class Thermostat {
+    constructor(temp) {
+      this._temperature = temp;
+    }
+    get temperature() {
+      return (5 / 9) * (this._temperature - 32);
+    }
+    set temperature(value) {
+      const tempInCelsius = value * (9 / 5) + 32;
+      this._temperature = tempInCelsius;
+    }
+  }
 
-  // Only change code above this line
-
-  const thermos = new Thermostat(76); // Setting in Fahrenheit scale
-  let temp = thermos.temperature; // 24.44 in Celsius
+  const thermos = new Thermostat(76);
+  let temp = thermos.temperature;
   thermos.temperature = 26;
-  temp = thermos.temperature; // 26 in Celsius
+  temp = thermos.temperature;
 }
