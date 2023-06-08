@@ -50,9 +50,8 @@
               try {
                 const request = new Request(spotifyAPIUrl, {
                   headers: {
-                    Authorization: "Bearer",
+                    Authorization: "Bearer 123",
                   },
-                  method: "GET",
                 });
                 const response = await fetch(request);
                 const data = await response.json();
