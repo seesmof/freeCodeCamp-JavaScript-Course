@@ -55,9 +55,15 @@
             </div>
             <button
               class="rounded-lg bg-green-500 px-4 py-2 font-medium text-white duration-500 hover:bg-green-600 active:scale-95"
+              id="get-weather"
             >
               Get Weather
             </button>
+          </div>
+
+          <div class="flex flex-row gap-2 py-6">
+            <div class="font-medium" id="outputCity"></div>
+            <div class="" id="outputTemp"></div>
           </div>
 
           <script>
@@ -68,7 +74,21 @@
               return fetch(url).then((response) => response.json());
             };
 
-            const inputCityBox = document.querySelector(".input-city");
+            const inputCityBox = document.querySelector("#input-city");
+            const outputCityBox = document.querySelector("#outputCity");
+            const outputTempBox = document.querySelector("#outputTemp");
+            const submitButton = document.querySelector("#get-weather");
+
+            submitButton.addEventListener("click", () => {
+              fetchWeatherFromInputCity(inputCityBox.value)
+                .then((data) => {
+                  outputCityBox.innerHTML = data.name + " - ";
+                  outputTempBox.innerHTML = data.main.temp + "°C";
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            });
           </script>
         </section>
       </div>
