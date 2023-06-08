@@ -39,6 +39,35 @@
           <h2 class="section-heading">Promises</h2>
 
           <div class="flex flex-col gap-2">
+            <p>
+              So, promises in JS are objects that promise to return some data in
+              the future, when they get it. But for now, when they dont have it,
+              they just promise you that it will be there, but nobody knows at
+              what time.
+            </p>
+            <p>
+              Promises are used in asynchronous programming to return a value in
+              the future. We can declare them by
+              <kbd>new Promise(function (resolve, reject) {})</kbd>.
+              <em>new</em> means that we create a new object,
+              <em>Promise</em> is a constructor for this object, which takes a
+              function as a parameter. This is where our async function goes.
+              And the async function should also take two function:
+              <em>resolve</em> and <em>reject</em>. <em>resolve</em> is called
+              when the promise is resolved, or the data is successfully
+              retrieved, and <em>reject</em> is called when the promise is
+              rejected, or something went wrong while getting the data.
+            </p>
+            <p>
+              In the example below we use a promise to get the data from an
+              async function. The function is just a <kbd>setTimeout</kbd>,
+              nothing serious there yet, and it resolves with some object, or,
+              rejects with an error. If it resolves, we can see a text in green,
+              if not, we can see an error a bit below in red.
+            </p>
+            <p>
+              <strong>Example:</strong>
+            </p>
             <div
               class="font-medium text-green-600"
               id="gotDataSuccessfully"
@@ -77,6 +106,32 @@
                 didntGetData.textContent = error;
                 console.log(error);
               });
+
+            const getWeather2 = () => {
+              return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve("404");
+                }, 100);
+              });
+            };
+
+            const getResolve = () => {
+              return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve("🎉");
+                }, 100);
+              });
+            };
+
+            const onError = (errorCode) => {
+              console.log(`Error: ${errorCode}`);
+            };
+
+            const onSuccess = (data) => {
+              console.log(data);
+            };
+
+            getWeather2().then(getResolve).then(onSuccess).catch(onError);
           </script>
         </section>
       </div>
