@@ -65,7 +65,16 @@
               return result.properties.periods[1].shortForecast;
             };
 
+            const somethingElse = async () => {
+              fetch("https://api.weather.gov/gridpoints/OKX/35,35/forecast")
+                .then((response) => response.json())
+                .then((data) =>
+                  console.log(data.properties.periods[1].shortForecast)
+                );
+            };
+
             main().then((result) => console.log(result));
+            somethingElse();
           </script>
         </section>
       </div>
