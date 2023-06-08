@@ -53,18 +53,30 @@
             const didntGetData = document.getElementById("didntGetData");
 
             const getWeather = () => {
-              setTimeout(() => {
-                const data = "🍕";
-                handleGotDataSuccessfully(data);
-              }, 1000);
+              return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve({
+                    city: "New York",
+                    country: "US",
+                    temperature: 20,
+                    humidity: 80,
+                    pressure: 1000,
+                  });
+                  reject("Something went wrong");
+                }, 100);
+              });
             };
 
-            const handleGotDataSuccessfully = (data) => {
-              gotDataSuccessfully.innerHTML = data;
-              console.log(data);
-            };
-
-            getWeather();
+            getWeather()
+              .then((data) => {
+                gotDataSuccessfully.textContent =
+                  data.city + ", " + data.country;
+                console.log(data);
+              })
+              .catch((error) => {
+                didntGetData.textContent = error;
+                console.log(error);
+              });
           </script>
         </section>
       </div>
