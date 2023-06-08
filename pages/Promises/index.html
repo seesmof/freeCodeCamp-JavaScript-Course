@@ -43,22 +43,23 @@
           </div>
 
           <script>
-            const promise = new Promise((resolve, reject) => {
+            const getWeather = (callback) => {
               setTimeout(() => {
-                resolve("Good Data Recieved");
-                reject("Bad Data Recieved");
+                const weather = {
+                  city: "London",
+                  country: "UK",
+                  temperature: 20,
+                };
+
+                callback(weather);
               }, 1000);
-            });
-
-            const handleDataRecieve = (data) => {
-              console.log(data);
             };
 
-            const handleError = (error) => {
-              console.log(error);
+            const renderWeather = (weather) => {
+              console.log(weather);
             };
 
-            promise.then(handleDataRecieve).catch(handleError);
+            getWeather(renderWeather);
           </script>
         </section>
       </div>
