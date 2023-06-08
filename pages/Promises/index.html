@@ -51,16 +51,18 @@
               "gotDataSuccessfully"
             );
             const didntGetData = document.getElementById("didntGetData");
+
             const getWeather = () => {
               return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                  resolve({
-                    city: "London",
-                    country: "UK",
-                    continent: "Europe",
-                    temperature: 20,
-                    humidity: 40,
-                  });
+                  // resolve({
+                  //   city: "London",
+                  //   country: "UK",
+                  //   continent: "Europe",
+                  //   temperature: 20,
+                  //   humidity: 40,
+                  // });
+                  reject("Something went wrong");
                 }, 1000);
               });
             };
