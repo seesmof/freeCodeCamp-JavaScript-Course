@@ -108,6 +108,11 @@
             <p>
               <strong>Example using Fetch API:</strong>
             </p>
+            <div
+              class="font-medium text-green-600"
+              id="gotWeatherSuccess"
+            ></div>
+            <div class="font-medium text-red-600" id="didntGetWeather"></div>
           </div>
 
           <script>
@@ -175,6 +180,32 @@
               .then(onSuccess)
               .catch(onError)
               .finally(onFinal);
+
+            const weatherOutputSuccess =
+              document.getElementById("gotWeatherSuccess");
+            const weatherOutputError =
+              document.getElementById("didntGetWeather");
+            const fetchWeather = () => {
+              return new Promise((resolve, reject) => {
+                fetch("https://api.weather.gov/gridpoints/OKX/35,35/forecast")
+                  .then((response) => {
+                    return response.json();
+                  })
+                  .then((data) => {
+                    resolve(data.properties.periods[1].shortForecast);
+                  });
+              });
+            };
+
+            fetchWeather()
+              .then((data) => {
+                weatherOutputSuccess.textContent = data;
+                console.log(data);
+              })
+              .catch((error) => {
+                weatherOutputError.textContent = error;
+                console.log(error);
+              });
           </script>
         </section>
       </div>
