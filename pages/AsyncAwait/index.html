@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../src/index.css" />
+    <title>Async Await</title>
+  </head>
+  <body class="bg-neutral-100 text-neutral-900">
+    <a
+      href="./index.html"
+      class="fixed bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-800 text-center font-medium text-neutral-100 lg:bottom-4 lg:right-4 lg:h-10 lg:w-10"
+      title="Home"
+    >
+      <span>?</span>
+    </a>
+
+    <div class="mx-auto min-h-screen w-full max-w-4xl">
+      <div class="flex flex-col p-4 lg:p-6">
+        <!-- BREADCRUMBS -->
+        <div class="breakdcrumbs-section">
+          <a href="../index.html" class="underline-offset-4 hover:underline"
+            >Home</a
+          >
+          &gt;
+          <a
+            href="../index.html#asynchronous-programming"
+            class="underline-offset-4 hover:underline"
+            >Asynchronous Programming</a
+          >
+          &gt;
+          <a href="./index.html" class="underline-offset-4 hover:underline"
+            >Async Await</a
+          >
+        </div>
+
+        <section class="section-template">
+          <h2 class="section-heading">Async Await</h2>
+
+          <div class="flex flex-col gap-2">
+            <p>
+              Okay, let us do a little bit of research on our own this time,
+              just to tryna get a grasp of what async/await is all about. So, as
+              I understand it right now, async is a way to declare an
+              asynchronous function, which always returns a promise. And await
+              is a way to wait for the promise to resolve. And the interesting
+              part is that those functions look and work as if they were
+              synchronous. So in async function we wait for each event to finish
+              before continuing the execution, I already checked that. Now lets
+              find out a bit more from the video.
+            </p>
+          </div>
+
+          <script>
+            const getData = () => {
+              return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve("Data retrieved");
+                }, 1000);
+              });
+            };
+
+            async function getDataAsync() {
+              const data = await getData();
+              console.log(data);
+            }
+
+            console.log("Hi");
+            getDataAsync();
+            console.log("Hi");
+          </script>
+        </section>
+      </div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/other.jsx"></script>
+  </body>
+</html>
