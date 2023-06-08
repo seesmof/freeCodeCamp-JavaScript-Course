@@ -43,14 +43,15 @@
           </div>
 
           <script>
-            let weather = getWeather();
             const outputContainer = document.getElementById("useThis");
-            outputContainer.innerHTML = weather;
+            const weatherRecieved = (data) => {
+              let weather = data;
+              outputContainer.innerHTML = weather;
+            };
 
             function getWeather() {
               setTimeout(() => {
-                weather = "Weather: " + Math.random();
-                outputContainer.innerHTML = weather;
+                weatherRecieved("Sunny");
               }, 1000);
             }
           </script>
