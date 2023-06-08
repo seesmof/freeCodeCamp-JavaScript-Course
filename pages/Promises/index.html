@@ -73,6 +73,20 @@
               id="gotDataSuccessfully"
             ></div>
             <div class="font-medium text-red-600" id="didntGetData"></div>
+
+            <p>
+              Also, a little useful thing to know about the <kbd>.then</kbd> and
+              <kbd>.catch</kbd> blocks is in then, it takes two parameters, for
+              example onSuccess and onFail, and first one is executed when we
+              resolve the promise and the second one when we reject it. And so
+              if we put both parameters in the then, it will sort of compare the
+              result and if there is a rejection, but also a success, it will be
+              executed, as well as the other nested thens. Well, thats as far as
+              I understood. But, if we have a catch nested in our promise call,
+              if there's an error or a rejection at any point, it just skipps
+              everything and jumps straight into that catch and handles the
+              error there. Which makes sense.
+            </p>
           </div>
 
           <script>
@@ -110,7 +124,7 @@
             const getWeather2 = () => {
               return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                  resolve("404");
+                  reject("404");
                 }, 100);
               });
             };
