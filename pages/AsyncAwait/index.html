@@ -75,6 +75,20 @@
 
             main().then((result) => console.log(result));
             somethingElse();
+
+            const getSomeMoreData = async () => {
+              try {
+                const data = await fetch(
+                  "https://api.weather.gov/gridpoints/OKX/35,35/forecast"
+                );
+                const result = await data.json();
+                console.log(result.properties.periods[1].shortForecast);
+              } catch (error) {
+                console.log(error);
+              }
+            };
+
+            getSomeMoreData();
           </script>
         </section>
       </div>
