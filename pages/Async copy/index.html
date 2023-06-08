@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../src/index.css" />
+    <title>Async Programming Fundementals</title>
+  </head>
+  <body class="bg-neutral-100 text-neutral-900">
+    <a
+      href="./index.html"
+      class="fixed bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-800 text-center font-medium text-neutral-100 lg:bottom-4 lg:right-4 lg:h-10 lg:w-10"
+      title="Home"
+    >
+      <span>?</span>
+    </a>
+
+    <div class="mx-auto min-h-screen w-full max-w-4xl">
+      <div class="flex flex-col p-4 lg:p-6">
+        <!-- BREADCRUMBS -->
+        <div class="breakdcrumbs-section">
+          <a href="../index.html" class="underline-offset-4 hover:underline"
+            >Home</a
+          >
+          &gt;
+          <a
+            href="../index.html#asynchronous-programming"
+            class="underline-offset-4 hover:underline"
+            >Asynchronous Programming</a
+          >
+          &gt;
+          <a href="./index.html" class="underline-offset-4 hover:underline"
+            >Asynchronous Programming Fundementals</a
+          >
+        </div>
+
+        <section class="section-template">
+          <h2 class="section-heading">asynchronous programming</h2>
+
+          <div class="flex flex-col gap-2">
+            <p>
+              Synchronous programming is code execution line by line. The
+              process we have with our example is we create sort of a branch of
+              our code when the pizza declaration is executed.
+            </p>
+            <p>
+              <em>SetTimeout</em> is an asynchronous function. In synchronous
+              programming we need to wait for the result or the ending of the
+              execution of other functions before continuing to the next task.
+            </p>
+            <p>
+              In our code we don't want a function to complete multiple things.
+              So asynchronous programming is making our functions do their stuff
+              on sort of a separate branch or a timeline, so to say.
+            </p>
+            <p>
+              We created an asynchronous function where we wait for 1 second to
+              create our pizza and then make a callback to notify our customer,
+              but do we actually need to pass our callback as an argument? Not
+              sure yet.
+            </p>
+            <p>
+              Also, one more interesting thing is that if we remove the
+              <em>let</em> declaration of our pizza variable, we simply skip the
+              last line where we eat the pizza which is weird and I dont get it.
+            </p>
+            <p>
+              So, asynchronous programming is pretty much when our code has
+              those sort of functions and the directions they can take off of
+              our main programm flow, without interrupting it.
+            </p>
+          </div>
+
+          <script>
+            window.addEventListener("click", () => {
+              console.log("Clicked");
+            });
+
+            const doSomeMaths = (numberOne, numberTwo, callback) => {
+              let sum = numberOne;
+              setTimeout(() => {
+                for (let i = numberOne; i <= numberTwo; i++) {
+                  sum *= i;
+                }
+                callback(sum);
+              }, 2000);
+            };
+
+            const result = doSomeMaths(2, 30, (sum) => {
+              console.log(sum);
+            });
+
+            const callInRandomTime = (callback) => {
+              const randomTime = Math.floor(Math.random() * 5) + 1;
+              setTimeout(() => {
+                callback();
+              }, randomTime * 1000);
+            };
+
+            callInRandomTime(() => {
+              console.log("Called in random time");
+            });
+
+            const thingOne = (callback) => callback();
+            const thingTwo = (callback) => callback();
+            const thingThree = (callback) => callback();
+
+            // CALLBACK HELL or SIDEWAYS PYRAMID
+            thingOne(() => {
+              thingTwo(() => {
+                thingThree(() => {
+                  console.log("Callback hell escaped");
+                });
+              });
+            });
+
+            const orderPizza = (callback) => {
+              setTimeout(() => {
+                const pizza = "Pepperoni";
+                callback(pizza);
+              }, 2000);
+            };
+
+            const pizzaReady = (pizza) => {
+              console.log(`Eat the ${pizza}`);
+            };
+
+            orderPizza(pizzaReady);
+            console.log("Calling Robo");
+            console.log(`Eating ${pizza ? pizza : "some kind of pizza"}`);
+          </script>
+        </section>
+
+        <section class="section-template">
+          <h2 class="section-heading"></h2>
+        </section>
+      </div>
+    </div>
+
+    <script></script>
+
+    <div id="root"></div>
+    <script type="module" src="/src/other.jsx"></script>
+  </body>
+</html>
