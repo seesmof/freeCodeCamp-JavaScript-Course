@@ -53,42 +53,18 @@
             const didntGetData = document.getElementById("didntGetData");
 
             const getWeather = () => {
-              return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                  reject("Rainy");
-                  resolve("Sunny");
-                }, 100);
-              });
+              setTimeout(() => {
+                const data = "🍕";
+                handleGotDataSuccessfully(data);
+              }, 1000);
             };
 
-            const addIcon = (data) => {
-              return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                  switch (data) {
-                    case "Sunny":
-                      resolve("🌞");
-                      break;
-                    case "Rainy":
-                      resolve("🌧");
-                      break;
-                    default:
-                      reject("NO DATA FOUND");
-                  }
-                }, 100);
-              });
-            };
-
-            const onSuccess = (data) => {
+            const handleGotDataSuccessfully = (data) => {
               gotDataSuccessfully.innerHTML = data;
               console.log(data);
             };
 
-            const onError = (error) => {
-              didntGetData.innerHTML = error;
-              console.log(error);
-            };
-
-            getWeather().then(addIcon).then(onSuccess).catch(onError);
+            getWeather();
           </script>
         </section>
       </div>
