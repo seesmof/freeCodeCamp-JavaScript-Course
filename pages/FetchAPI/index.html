@@ -47,17 +47,22 @@
               "https://api.spotify.com/v1/artists/0k17h0d3J5VfsdmQ1iZtE8";
 
             const getData = async () => {
+              const request = new Request(spotifyAPIUrl, {
+                headers: {
+                  Authorization: "Bearer 123",
+                },
+              });
+
               try {
-                const request = new Request(spotifyAPIUrl, {
-                  headers: {
-                    Authorization: "Bearer 123",
-                  },
-                });
                 const response = await fetch(request);
                 const data = await response.json();
-                console.log(data);
+                if (status === 200) {
+                  console.log(`Data: ${data}`);
+                } else {
+                  console.log(`Server Error: ${data.error.message}`);
+                }
               } catch (error) {
-                console.log(error);
+                console.log(`Fetch Error: ${error}`);
               }
             };
 
