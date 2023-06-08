@@ -57,17 +57,17 @@
           </div>
 
           <script>
-            const getData = async () => {
+            const getData = async (time) => {
               return new Promise((resolve, reject) => {
                 setTimeout(() => {
                   resolve(46);
-                }, 100);
+                }, time);
               });
             };
 
             const main = async () => {
               try {
-                const data = await getData();
+                const data = await getData(1000);
                 console.log(data);
               } catch (error) {
                 console.log(error);
@@ -75,7 +75,8 @@
             };
 
             const start = async () => {
-              getData()
+              const time = 2000;
+              getData(time)
                 .then((data) => {
                   console.log(data);
                 })
@@ -84,8 +85,11 @@
                 });
             };
 
+            console.log("Howdy");
             main();
+            console.log("Howdy");
             start();
+            console.log("Howdy");
           </script>
         </section>
       </div>
