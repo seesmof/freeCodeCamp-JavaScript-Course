@@ -1440,3 +1440,9 @@ cannot override these now
 
   export { uppercaseString, lowercaseString };
 }
+{
+  import { uppercaseString, lowercaseString } from "./string_functions.js";
+
+  uppercaseString("hello");
+  lowercaseString("HELLO");
+}
