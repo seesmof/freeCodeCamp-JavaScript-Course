@@ -55,22 +55,23 @@
             const getWeather = () => {
               return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                  reject("Rainy 🌧");
                   resolve("Sunny 🌞");
+                  reject("Rainy 🌧");
                 }, 1000);
               });
             };
 
-            getWeather().then(
-              (data) => {
-                gotDataSuccessfully.innerHTML = data;
-                console.log(data);
-              },
-              (error) => {
-                didntGetData.innerHTML = error;
-                console.log(error);
-              }
-            );
+            const onSuccess = (data) => {
+              gotDataSuccessfully.innerHTML = data;
+              console.log(data);
+            };
+
+            const onError = (error) => {
+              didntGetData.innerHTML = error;
+              console.log(error);
+            };
+
+            getWeather().then(onSuccess, onError);
           </script>
         </section>
       </div>
