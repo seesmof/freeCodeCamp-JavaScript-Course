@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../src/index.css" />
+    <title>Practice</title>
+  </head>
+  <body class="bg-neutral-100 text-neutral-900">
+    <a
+      href="./index.html"
+      class="fixed bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-800 text-center font-medium text-neutral-100 lg:bottom-4 lg:right-4 lg:h-10 lg:w-10"
+      title="Home"
+    >
+      <span>?</span>
+    </a>
+
+    <div class="mx-auto min-h-screen w-full max-w-4xl">
+      <div class="flex flex-col p-4 lg:p-6">
+        <!-- BREADCRUMBS -->
+        <div class="breakdcrumbs-section">
+          <a href="../index.html" class="underline-offset-4 hover:underline"
+            >Home</a
+          >
+          &gt;
+          <a
+            href="../index.html#asynchronous-programming"
+            class="underline-offset-4 hover:underline"
+            >Asynchronous Programming</a
+          >
+          &gt;
+          <a href="./index.html" class="underline-offset-4 hover:underline"
+            >Promises</a
+          >
+          &gt;
+          <a href="./practice.html" class="underline-offset-4 hover:underline"
+            >Practice project</a
+          >
+        </div>
+
+        <section class="section-template">
+          <h2 class="section-heading">Practice Promises</h2>
+
+          <div class="flex w-full flex-col gap-2">
+            <div class="flex flex-col gap-1">
+              <label for="input-city" class="sr-only font-medium">City</label>
+              <input
+                type="text"
+                name="input-city"
+                id="input-city"
+                class="rounded-lg border-none px-4 py-2 outline-none ring-0"
+                placeholder="New York..."
+              />
+            </div>
+            <button
+              class="rounded-lg bg-green-500 px-4 py-2 font-medium text-white duration-500 hover:bg-green-600 active:scale-95"
+            >
+              Get Weather
+            </button>
+          </div>
+
+          <script>
+            const openWeatherMapAPIKey = "acf1d8082e6dccbf5b9a72dd3c1f9cf8";
+
+            const fetchWeatherFromInputCity = (city) => {
+              const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openWeatherMapAPIKey}&units=metric`;
+              return fetch(url).then((response) => response.json());
+            };
+
+            const inputCityBox = document.querySelector(".input-city");
+          </script>
+        </section>
+      </div>
+    </div>
+
+    <script></script>
+
+    <div id="root"></div>
+    <script type="module" src="/src/other.jsx"></script>
+  </body>
+</html>
