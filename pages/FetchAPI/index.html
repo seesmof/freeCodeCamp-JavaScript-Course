@@ -43,12 +43,23 @@
           </div>
 
           <script>
-            const url =
-              "https://worldtimeapi.org/api/timezone/America/New_York";
+            const spotifyAPIUrl =
+              "https://api.spotify.com/v1/artists/0k17h0d3J5VfsdmQ1iZtE8";
+
             const getData = async () => {
-              const response = await fetch(url);
-              const data = await response.json();
-              console.log(data);
+              try {
+                const request = new Request(spotifyAPIUrl, {
+                  headers: {
+                    Authorization: "Bearer",
+                  },
+                  method: "GET",
+                });
+                const response = await fetch(request);
+                const data = await response.json();
+                console.log(data);
+              } catch (error) {
+                console.log(error);
+              }
             };
 
             getData();
