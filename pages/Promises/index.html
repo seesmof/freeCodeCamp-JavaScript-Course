@@ -43,23 +43,15 @@
           </div>
 
           <script>
-            const getWeather = (callback) => {
+            let weather = getWeather();
+            console.log(weather);
+
+            function getWeather() {
               setTimeout(() => {
-                const weather = {
-                  city: "London",
-                  country: "UK",
-                  temperature: 20,
-                };
-
-                callback(weather);
-              }, 1000);
-            };
-
-            const renderWeather = (weather) => {
-              console.log(weather);
-            };
-
-            getWeather(renderWeather);
+                // return 'sunny'; => returns 'undefined'
+              });
+              // return undefined
+            }
           </script>
         </section>
       </div>
