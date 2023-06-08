@@ -45,11 +45,12 @@
           <script>
             const outputContainer = document.getElementById("useThis");
 
-            getWeather(weatherRecieved);
+            getWeather(displayIcon);
 
-            const weatherRecieved = (data) => {
-              let weather = data;
-              outputContainer.innerHTML = weather;
+            const displayIcon = (weather) => {
+              if (weather === "Sunny") outputContainer.innerHTML = "☀️";
+              if (weather === "Rainy") outputContainer.innerHTML = "🌧️";
+              if (weather === "Cloudy") outputContainer.innerHTML = "☁️";
             };
 
             function getWeather(callback) {
