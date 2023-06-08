@@ -42,7 +42,24 @@
             <p>lorem</p>
           </div>
 
-          <script></script>
+          <script>
+            const promise = new Promise((resolve, reject) => {
+              setTimeout(() => {
+                resolve("Good Data Recieved");
+                reject("Bad Data Recieved");
+              }, 1000);
+            });
+
+            const handleDataRecieve = (data) => {
+              console.log(data);
+            };
+
+            const handleError = (error) => {
+              console.log(error);
+            };
+
+            promise.then(handleDataRecieve).catch(handleError);
+          </script>
         </section>
       </div>
     </div>
