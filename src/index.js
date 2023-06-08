@@ -1446,3 +1446,9 @@ cannot override these now
   uppercaseString("hello");
   lowercaseString("HELLO");
 }
+{
+  import * as stringFunctions from "./string_functions.js";
+
+  stringFunctions.uppercaseString("hello");
+  stringFunctions.lowercaseString("WORLD!");
+}
