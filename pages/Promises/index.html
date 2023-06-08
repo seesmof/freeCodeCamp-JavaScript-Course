@@ -93,6 +93,21 @@
               rather just write down our global catch block at the end. This way
               we dont cause any problems.
             </p>
+            <p>
+              Also, one more method we have for our promise object is
+              <kbd>.finally</kbd> which executes no matter what other nested
+              blocks got executed. Not sure when its useful, but the guy in the
+              video says that we might use it for cleaning up any stuff that
+              might be left running. So, even if theres an error in our
+              execution, the finally block will be executed anyway.
+            </p>
+            <p>
+              Now we wanna go ahead and try using a fetch API to get some actual
+              weather data and output it below
+            </p>
+            <p>
+              <strong>Example using Fetch API:</strong>
+            </p>
           </div>
 
           <script>
@@ -151,7 +166,15 @@
               console.log(data);
             };
 
-            getWeather2().then(getResolve).then(onSuccess).catch(onError);
+            const onFinal = () => {
+              console.log("Execution completed");
+            };
+
+            getWeather2()
+              .then(getResolve)
+              .then(onSuccess)
+              .catch(onError)
+              .finally(onFinal);
           </script>
         </section>
       </div>
