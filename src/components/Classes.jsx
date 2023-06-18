@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import { RxCross1, RxPencil1 } from "react-icons/rx";
+import React, { useRef, useState } from "react";
+import { RxCross1 } from "react-icons/rx";
 import { BiCake } from "react-icons/bi";
-import { AiOutlineMail, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 
 // TODO: Add a box form for adding new users. Add different image for each user
 
@@ -44,8 +44,6 @@ const Classes = () => {
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const [isFilled, setIsFilled] = useState(false);
 
   const userCard = (name, age, email) => (
     <>
@@ -91,25 +89,7 @@ const Classes = () => {
   const inputEmail = useRef(null);
   const formSubmitted = useState(false);
 
-  const [data, setData] = useState({
-    username: "",
-    age: "",
-    email: "",
-  });
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setData({
-      username: inputUsername.current.value,
-      age: inputAge.current.value,
-      email: inputEmail.current.value,
-    });
-    inputUsername.current.value = "";
-    inputAge.current.value = "";
-    inputEmail.current.value = "";
-    formSubmitted(true);
-    users.push((prev) => new User(prev.name, prev.age, prev.email));
-  };
+  const [data, setData] = useState({});
 
   return (
     <>
@@ -146,7 +126,17 @@ const Classes = () => {
 
               <button
                 className="button button-green lg:mt-6 mt-4"
-                onClick={handleFormSubmit}
+                onClick={() => {
+                  setData({
+                    username: inputUsername.current.value,
+                    age: inputAge.current.value,
+                    email: inputEmail.current.value,
+                  });
+                  inputUsername.current.value = "";
+                  inputAge.current.value = "";
+                  inputEmail.current.value = "";
+                  setUsers([...users, data]);
+                }}
               >
                 Add User
               </button>
