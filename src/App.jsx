@@ -4,6 +4,7 @@ import Classes from "./components/Classes";
 import Constants from "./components/Constants";
 import ContactsLookup from "./components/ContactsLookup";
 import Hero from "./components/Hero";
+import JsonPlaceholderFetchTesting from "./components/JsonPlaceholderFetchTesting";
 import MultidimensionalArrays from "./components/MultidimensionalArrays";
 import StringVariables from "./components/StringVariables";
 import Variables from "./components/Variables";
@@ -22,6 +23,7 @@ function App() {
           <ContactsLookup />
           <MultidimensionalArrays />
           <Classes />
+          <JsonPlaceholderFetchTesting />
         </main>
       </div>
     </>
