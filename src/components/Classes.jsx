@@ -41,42 +41,31 @@ const Classes = () => {
     setUsers(filteredUsers);
   };
 
-  const editUser = (name, age, email) => {
-    const editedUser = new User(name, age, email);
-    const filteredUsers = users.filter((user) => user.name !== name);
-    setUsers([...filteredUsers, editedUser]);
-    setSearchQuery("");
-  };
-
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const [isFilled, setIsFilled] = useState(false);
 
-  const handleHeartButtonClick = () => {
-    setIsFilled(!isFilled);
-  };
-
   const userCard = (name, age, email) => (
     <>
-      <div className="col-span-1 flex flex-row gap-4 overflow-hidden rounded-lg bg-slate-800 p-4">
+      <div className="bg-slate-800 flex flex-row col-span-1 gap-4 p-4 overflow-hidden rounded-lg">
         <img
           src="https://picsum.photos/200/300"
           alt="personal avatar image"
-          className="h-12 w-12 shrink-0 grow-0 rounded-full"
+          className="shrink-0 grow-0 w-12 h-12 rounded-full"
         />
-        <div className="flex flex-1 flex-col">
+        <div className="flex flex-col flex-1">
           <div className="flex flex-row items-center justify-between pb-2">
             <h2 className="text-xl font-bold">{name}</h2>
             <RxCross1
-              className="cursor-pointer text-lg text-red-500 duration-500 hover:text-red-600"
+              className="hover:text-red-600 text-lg text-red-500 duration-500 cursor-pointer"
               onClick={() => removeUser(name)}
             />
           </div>
           <div className="flex flex-row gap-4 font-medium">
             <div
-              className="flex cursor-pointer flex-row items-center gap-1 text-slate-300"
+              className="text-slate-300 flex flex-row items-center gap-1 cursor-pointer"
               title={"User's Age - " + age}
               onClick={() => copyToClipboard(age)}
             >
@@ -85,11 +74,11 @@ const Classes = () => {
             </div>
             <div
               title={"User's Email - " + email}
-              className="flex cursor-pointer flex-row items-center gap-1 text-slate-300"
+              className="text-slate-300 flex flex-row items-center gap-1 cursor-pointer"
               onClick={() => copyToClipboard(email)}
             >
               <AiOutlineMail className="text-lg text-blue-500" />
-              <p className="hidden lg:block">{email}</p>
+              <p className="lg:block hidden">{email}</p>
             </div>
           </div>
         </div>
@@ -127,10 +116,10 @@ const Classes = () => {
       <section className="section-template">
         <h2 className="section-heading">Classes</h2>
 
-        <div className="flex w-full flex-row gap-6">
-          <div className="w-full lg:w-1/2">
-            <div className="flex flex-col rounded-lg bg-slate-800 p-3">
-              <h3 className="py-2 text-lg font-medium capitalize lg:text-xl">
+        <div className="flex flex-row w-full gap-6">
+          <div className="lg:w-1/2 w-full">
+            <div className="bg-slate-800 flex flex-col p-3 rounded-lg">
+              <h3 className="lg:text-xl py-2 text-lg font-medium capitalize">
                 add new user
               </h3>
 
@@ -156,14 +145,14 @@ const Classes = () => {
               </div>
 
               <button
-                className="button button-green mt-4 lg:mt-6"
+                className="button button-green lg:mt-6 mt-4"
                 onClick={handleFormSubmit}
               >
                 Add User
               </button>
             </div>
           </div>
-          <div className="hidden w-1/2 flex-col lg:flex">
+          <div className="lg:flex flex-col hidden w-1/2">
             <h3 className="mb-4 text-xl font-medium">Preview</h3>
             {formSubmitted
               ? userCard(data.username, data.age, data.email)
@@ -174,7 +163,7 @@ const Classes = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="input-field-underline mb-4 w-full"
+          className="input-field-underline w-full mb-4"
           onChange={handleChange}
           value={searchQuery}
         />
