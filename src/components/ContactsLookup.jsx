@@ -71,8 +71,8 @@ const ContactsLookup = () => {
     };
 
     return (
-      <div className="col-span-1 flex flex-col gap-4 rounded-lg bg-slate-800 p-4 text-slate-300">
-        <div className="flex flex-row items-center justify-between text-slate-50">
+      <div className="bg-slate-800 text-slate-300 flex flex-col col-span-1 gap-4 p-4 rounded-lg">
+        <div className="text-slate-50 flex flex-row items-center justify-between">
           <h2 className="text-xl font-bold">
             {contact.firstName} {contact.lastName}
           </h2>
@@ -93,7 +93,7 @@ const ContactsLookup = () => {
             <AiOutlinePhone className="text-2xl" /> {contact.number}
           </p>
           <p className="flex flex-row items-center gap-1.5">
-            <RiHeartsLine className="text-xl text-slate-50" />{" "}
+            <RiHeartsLine className="text-slate-50 text-xl" />{" "}
             {contact.likes.join(", ")}
           </p>
         </div>
@@ -108,7 +108,7 @@ const ContactsLookup = () => {
 
         <input
           type="text"
-          className="input-field-underline mb-4 w-full"
+          className="input-field-underline w-full mb-4"
           placeholder="Search..."
           aria-label="Search..."
           aria-describedby="search-addon"
