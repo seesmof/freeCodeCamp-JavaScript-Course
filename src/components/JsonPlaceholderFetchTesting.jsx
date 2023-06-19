@@ -47,10 +47,6 @@ const JsonPlaceholderFetchTesting = () => {
     fetchComments();
   }, []);
 
-  console.log(posts);
-  console.log(users);
-  console.log(comments);
-
   const NewPost = () => {
     return (
       <>
@@ -118,20 +114,26 @@ const JsonPlaceholderFetchTesting = () => {
   const PostCard = ({ title, user, message, postId }) => {
     const [isLiked, setIsLiked] = useState(false);
     const [isDisliked, setIsDisliked] = useState(false);
+    const newCommentRef = useRef(null);
 
     const localComments = comments.filter((comment) => {
       return comment.postId === postId;
     });
 
-    const addNewComment = () => {
-      // TODO: Finish this
+    const addNewComment = ({ message, name, email }) => {
+      const newComment = {
+        body: message,
+        name: name,
+        email: email,
+      };
+      setComments([...localComments, newComment]);
     };
 
     return (
       <>
         <div className="gray-card w-full">
           <div className="flex flex-col">
-            <div className="flex flex-row items-center justify-between">
+            <div className="flex flex-row items-start justify-between">
               <h2 className="text-slate-50 text-lg font-medium capitalize">
                 {title}
               </h2>
@@ -189,8 +191,18 @@ const JsonPlaceholderFetchTesting = () => {
                   rows="1"
                   className="input-field-underline w-full resize-none"
                   placeholder="What do you think..."
+                  ref={newCommentRef}
                 />
-                <button className="button button-gray">Send</button>
+                <button
+                  className="button button-gray"
+                  onClick={addNewComment(
+                    newCommentRef,
+                    users[post.userId - 1].name,
+                    users[post.userId - 1].email
+                  )}
+                >
+                  Send
+                </button>
               </div>
             </section>
           </div>
