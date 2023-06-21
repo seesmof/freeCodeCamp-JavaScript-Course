@@ -43,9 +43,9 @@
     @apply bg-slate-800 text-slate-300 p-4 rounded-lg;
   }
   .like-button {
-    @apply hover:text-red-600 duration-300 active:scale-95;
+    @apply hover:text-red-600 active:scale-95 duration-300;
   }
   .dislike-button {
-    @apply hover:text-stone-100 duration-300 active:scale-95;
+    @apply hover:text-stone-100 active:scale-95 duration-300;
   }
 }
