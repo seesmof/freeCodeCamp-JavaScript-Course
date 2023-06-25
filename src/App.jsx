@@ -15,7 +15,7 @@ function App() {
       <div class="mx-auto max-w-6xl p-4 sm:p-6">
         <Hero />
         <main class="flex flex-col gap-4 py-4 sm:gap-6 sm:py-6">
-          <JsonPlaceholderFetchTesting />
+          {/* <JsonPlaceholderFetchTesting /> */}
 
           <Variables />
           <Assignments />
