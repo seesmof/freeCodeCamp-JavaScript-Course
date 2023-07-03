@@ -18,6 +18,7 @@ function App() {
         <main class="flex flex-col gap-4 py-4 sm:gap-6 sm:py-6">
           {/* <JsonPlaceholderFetchTesting /> */}
 
+          <MultidimensionalArrays />
           <StructureHomework />
           <Variables />
           <Assignments />
