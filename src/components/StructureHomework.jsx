@@ -17,6 +17,8 @@ const StructureHomework = () => {
       "Be cautious of fake modeling opportunities. Scammers often use social media and messaging apps to lure aspiring models with promises of jobs and wages that are too good to be true. Always research the company and ask for a list of clients and models they have worked with. Never pay an agency upfront and be wary of vague job descriptions or unusual email domains. Protect yourself and your career by staying informed and vigilant.",
   };
 
+  const [count, setCount] = React.useState(0);
+
   return (
     <>
       <section className="section-template">
@@ -35,7 +37,7 @@ const StructureHomework = () => {
               <p className="py-3">{model.description}</p>
               <h4 className="pb-2 font-medium">Employment history:</h4>
               {model.employmentHistory.map((item, index) => (
-                <li className="text-sm md:text-base" key={index}>
+                <li className="md:text-base text-sm" key={index}>
                   {item}
                 </li>
               ))}
