@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import JsonPlaceholderFetchTesting from "./components/JsonPlaceholderFetchTesting";
 import MultidimensionalArrays from "./components/MultidimensionalArrays";
 import StringVariables from "./components/StringVariables";
+import StructureHomework from "./components/StructureHomework";
 import Variables from "./components/Variables";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <main class="flex flex-col gap-4 py-4 sm:gap-6 sm:py-6">
           {/* <JsonPlaceholderFetchTesting /> */}
 
+          <StructureHomework />
           <Variables />
           <Assignments />
           <StringVariables />
