@@ -9,6 +9,7 @@ import MultidimensionalArrays from "./components/MultidimensionalArrays";
 import StringVariables from "./components/StringVariables";
 import StructureHomework from "./components/StructureHomework";
 import Variables from "./components/Variables";
+import Test from "./components/Test";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <div class="mx-auto max-w-6xl p-4 sm:p-6">
         <Hero />
         <main class="flex flex-col gap-4 py-4 sm:gap-6 sm:py-6">
+          <Test />
+
           {/* <JsonPlaceholderFetchTesting /> */}
 
           <MultidimensionalArrays />

@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const Test = () => {
-  return <div>Test</div>;
-};
+function App() {
+  const [message, setMessage] = useState("");
 
-export default Test;
+  useEffect(() => {
+    axios
+      .get("/message.txt")
+      .then((response) => {
+        setMessage(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  return (
+    <div>
+      <button>Generate Greeting</button>
+      <p>{message}</p>
+    </div>
+  );
+}
+
+export default App;
