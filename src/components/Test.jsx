@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-
-function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("/message.txt")
-      .then((response) => {
-        setMessage(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+const Test = () => {
+  const count = 1;
 
   return (
-    <div>
-      <button>Generate Greeting</button>
-      <p>{message}</p>
-    </div>
+    <ul>
+      <li>Item {count}</li>
+      <li>Item {count + 1}</li>
+      <li>Item {count + 2}</li>
+    </ul>
   );
-}
+};
 
-export default App;
+export default Test;
