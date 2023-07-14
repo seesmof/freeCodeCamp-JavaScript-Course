@@ -1502,4 +1502,16 @@ cannot override these now
   const myConcat = (arr1, arr2) => arr1.concat(arr2);
 
   console.log(myConcat([1, 2], [3, 4, 5]));
+
+  // EXERCISE 1
+  // Create a function that takes an array of numbers and returns the sum of all the even numbers in the array. Use an arrow function with a default parameter of 0 for the accumulator.
+  const sumEvenNumbers = (array = 0) => {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] % 2 === 0) {
+        sum += array[i];
+      }
+    }
+    return sum;
+  };
 }
