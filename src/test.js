@@ -1,25 +1,4 @@
-const removeAgeFromObject = (array = []) => {
-  for (let i = 0; i < array.length; i++) {
-    delete array[i].age;
-  }
-  return array;
-};
+const getOddNumbers = (array = []) => array.filter((x) => x % 2 !== 0);
 
-let givenArray = [
-  {
-    name: "Sally",
-    age: 19,
-  },
-  {
-    name: "Margo",
-    age: 26,
-  },
-  {
-    name: "Peter",
-    age: 21,
-  },
-];
-
-console.log(givenArray);
-givenArray = removeAgeFromObject(givenArray);
-console.log(givenArray);
+const array = [3, 1, 6, 4, 9, 5];
+console.log(getOddNumbers(array));

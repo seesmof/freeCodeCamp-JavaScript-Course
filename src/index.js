@@ -1534,4 +1534,7 @@ cannot override these now
     }
     return array;
   };
+
+  // Create a function that takes an array of numbers and returns a new array with only the odd numbers. Use an arrow function with a default parameter of an empty array.
+  const getOddNumbers = (array = []) => array.filter((x) => x % 2 !== 0);
 }
