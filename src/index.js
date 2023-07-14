@@ -1514,4 +1514,7 @@ cannot override these now
     }
     return sum;
   };
+
+  // Write a function that takes an array of strings and returns a new array with all the strings converted to uppercase. Use an arrow function with a default parameter of an empty array.
+  const convertStringsToUppercase = strings;
 }
