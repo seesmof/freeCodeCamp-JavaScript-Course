@@ -1495,3 +1495,6 @@ cannot override these now
   }
   const PI = freezeObj();
 }
+{
+  const magic = () => new Date();
+}
