@@ -1,15 +1,25 @@
-const sumEvenNumbers = (array = 0) => {
-  let sum = 0;
+const removeAgeFromObject = (array = []) => {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 === 0) {
-      sum += array[i];
-    }
+    delete array[i].age;
   }
-  return sum;
+  return array;
 };
 
-const arrays = [[1, 4, 7, 3, 9], [0, 2, 5, 8, 6], [3, 7, 1, 4, 9], []];
+let givenArray = [
+  {
+    name: "Sally",
+    age: 19,
+  },
+  {
+    name: "Margo",
+    age: 26,
+  },
+  {
+    name: "Peter",
+    age: 21,
+  },
+];
 
-for (let i = 0; i < arrays.length; i++) {
-  console.log(`Sum for array ${i + 1} is ${sumEvenNumbers(arrays[i])}`);
-}
+console.log(givenArray);
+givenArray = removeAgeFromObject(givenArray);
+console.log(givenArray);

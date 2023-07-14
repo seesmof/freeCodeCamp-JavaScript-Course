@@ -1516,5 +1516,22 @@ cannot override these now
   };
 
   // Write a function that takes an array of strings and returns a new array with all the strings converted to uppercase. Use an arrow function with a default parameter of an empty array.
-  const convertStringsToUppercase = strings;
+  const convertStringsToUppercase = (array = []) => {
+    for (let i = 0; i < array.length; i++) {
+      array[i] = array[i].toUpperCase();
+    }
+    return array;
+  };
+
+  // Create a function that takes two numbers as parameters and returns the larger number. Use an arrow function with default parameters of 0 for both parameters.
+  const getLargerNumber = (num1 = 0, num2 = 0) =>
+    num1 > num2 ? num1 : num1 === num2 ? "EQUAL" : num2;
+
+  // Write a function that takes an array of objects with name and age properties and returns a new array of objects with only the name property. Use an arrow function with a default parameter of an empty array.
+  const removeAgeFromObject = (array = []) => {
+    for (let i = 0; i < array.length; i++) {
+      delete array[i].age;
+    }
+    return array;
+  };
 }
