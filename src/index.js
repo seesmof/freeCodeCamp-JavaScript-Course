@@ -1452,3 +1452,16 @@ cannot override these now
   stringFunctions.uppercaseString("hello");
   stringFunctions.lowercaseString("WORLD!");
 }
+{
+  // STARTING OVER ES6
+
+  function checkScope() {
+    let i = "function scope";
+    if (true) {
+      let i = "block scope";
+      console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+  }
+}
