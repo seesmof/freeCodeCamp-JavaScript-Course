@@ -1,7 +1,6 @@
-const sum = (...args) => {
-  let sum = 0;
-  for (let i = 0; i < args.length; i++) {
-    sum += args[i];
-  }
-  return sum;
-};
+const arr1 = ["JAN", "FEB", "MAR", "APR", "MAY"];
+let arr2;
+
+arr2 = [...arr1]; // Change this line
+
+console.log(arr2);
