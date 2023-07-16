@@ -1,10 +1,20 @@
-function removeFirstTwo(list) {
-  // Only change code below this line
-  const [, , ...shorterList] = list; // Change this line
-  // Only change code above this line
-  return shorterList;
-}
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  city: "New York",
+};
 
-const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const sourceWithoutFirstTwo = removeFirstTwo(source);
-console.log(sourceWithoutFirstTwo);
+const printPersonInfo = ({
+  firstName: firstOne,
+  lastName: lastOne,
+  age: oldOne,
+  city: whereOne,
+}) => {
+  console.log(`First One: ${firstOne}`);
+  console.log(`Last One: ${lastOne}`);
+  console.log(`Old One: ${oldOne}`);
+  console.log(`Where One: ${whereOne}`);
+};
+
+printPersonInfo(person);
