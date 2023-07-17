@@ -3,16 +3,16 @@ class Book {
     this._author = author;
   }
 
-  get witer() {
+  get writer() {
     return this._author;
   }
 
-  set witer(author) {
+  set writer(author) {
     this._author = author;
   }
 }
 
 const novel = new Book("John Doe");
-console.log(novel.witer);
-novel.witer = "Jane Doe";
-console.log(novel.witer);
+console.log(novel.writer);
+novel.writer = "Jane Doe";
+console.log(novel.writer);
