@@ -1,11 +1,19 @@
-const person = {
-  name: "Harry",
-  age: 21,
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"],
 };
+function makeList(arr) {
+  // Only change code below this line
+  const failureItems = [];
+  arr.forEach((item) => {
+    if (result.failure.includes(item)) {
+      failureItems.push(`<li class="text-warning">${item}</li>`);
+    }
+  });
+  // Only change code above this line
 
-const greet = `Hello ${person.name}! You are ${person.age} years old.`;
-const sayHello = () => {
-  console.log(greet);
-};
+  return failureItems;
+}
 
-sayHello();
+const failuresList = makeList(result.failure);
