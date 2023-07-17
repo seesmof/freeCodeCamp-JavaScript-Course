@@ -1,10 +1,10 @@
 // Only change code below this line
-const bicycle = {
-  gear: 2,
-  setGear(newGear) {
-    this.gear = newGear;
-  },
-};
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
 // Only change code above this line
-bicycle.setGear(3);
-console.log(bicycle.gear);
+
+const carrot = new Vegetable("carrot");
+console.log(carrot.name); // Should display 'carrot'
