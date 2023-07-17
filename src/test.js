@@ -4,3 +4,8 @@ const person = {
 };
 
 const greet = `Hello ${person.name}! You are ${person.age} years old.`;
+const sayHello = () => {
+  console.log(greet);
+};
+
+sayHello();
