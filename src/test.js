@@ -1,5 +1,5 @@
-import { uppercaseString, lowercaseString } from "./string_functions.js";
-// Only change code above this line
-
-uppercaseString("hello");
-lowercaseString("WORLD!");
+const makeServerRequest = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("success");
+  }, 5000);
+});
