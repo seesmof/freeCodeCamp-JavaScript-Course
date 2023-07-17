@@ -1,16 +1,18 @@
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-  set fullName(value) {
-    [this.firstName, this.lastName] = value.split(" ");
-  },
-};
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
 
-console.log(person.fullName);
-person.fullName = "Jane Doe";
-console.log(
-  `${person.firstName} is ${person.lastName} and she is a ${person.fullName}`
-);
+  get witer() {
+    return this._author;
+  }
+
+  set witer(author) {
+    this._author = author;
+  }
+}
+
+const novel = new Book("John Doe");
+console.log(novel.witer);
+novel.witer = "Jane Doe";
+console.log(novel.witer);
