@@ -1,10 +1,9 @@
-// Only change code below this line
-class Vegetable {
-  constructor(name) {
-    this.name = name;
-  }
-}
-// Only change code above this line
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
 
-const carrot = new Vegetable("carrot");
-console.log(carrot.name); // Should display 'carrot'
+console.log(person.fullName);
