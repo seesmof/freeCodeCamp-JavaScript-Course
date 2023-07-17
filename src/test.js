@@ -1,7 +1,7 @@
-<html>
-  <body>
-    <!-- Only change code below this line -->
-    <script type="module" src="index.js"></script>
-    <!-- Only change code above this line -->
-  </body>
-</html>
+export const uppercaseString = (string) => {
+  return string.toUpperCase();
+};
+
+export const lowercaseString = (string) => {
+  return string.toLowerCase();
+};
