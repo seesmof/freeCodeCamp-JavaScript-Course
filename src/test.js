@@ -1,5 +1,7 @@
-const str = "The quick brown fox jumps over the lazy dog.";
-const pattern = /o*/;
+const soccer = "goooooooooal!";
+const g = "gut feeling";
+const o = "over the moon";
+const go = /go*/gi;
 
-const matches = str.match(pattern);
-console.log(matches);
+console.log(`${soccer.match(go)} ${g.match(go)} ${o.match(go)}`);
+console.log(g.match(go));
