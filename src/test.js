@@ -1,4 +1,2 @@
-const str = "titanic";
-const pattern = /t[a-z]*i/gi;
-const matches = str.match(pattern);
-console.log(matches);
+const findCriminals = /C+/g;
+console.log(findCriminals.test("P1P5P4CCCcP2P6P3"));
