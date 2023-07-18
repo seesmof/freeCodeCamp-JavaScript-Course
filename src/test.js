@@ -1,10 +1,10 @@
-const big = "big";
-const bag = "bag";
-const bug = "bug";
-const bog = "bog";
-const regex = /b[aiu]g/gi;
+const cat = "cat";
+const bat = "bat";
+const mat = "mat";
+const rat = "rat";
+const regex = /[a-e]at/gi;
 console.log(
-  `${bog.match(regex)}, ${big.match(regex)}, ${bag.match(regex)}, ${bug.match(
+  `${cat.match(regex)} ${bat.match(regex)} ${mat.match(regex)} ${rat.match(
     regex
   )}`
 );
