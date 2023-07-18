@@ -1,8 +1,4 @@
-const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
-
-// Only change code below this line
-let chewieRegex = /Aa*/g; // Change this line
-// Only change code above this line
-
-let result = chewieQuote.match(chewieRegex);
-console.log(result);
+const str = "titanic";
+const pattern = /t[a-z]*i/gi;
+const matches = str.match(pattern);
+console.log(matches);
