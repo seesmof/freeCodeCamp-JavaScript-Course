@@ -1,10 +1,4 @@
-const cat = "cat";
-const bat = "bat";
-const mat = "mat";
-const rat = "rat";
-const regex = /[a-e]at/gi;
-console.log(
-  `${cat.match(regex)} ${bat.match(regex)} ${mat.match(regex)} ${rat.match(
-    regex
-  )}`
-);
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi; // Change this line
+let result = quoteSample.match(alphabetRegex); // Change this line
+console.log(result);
