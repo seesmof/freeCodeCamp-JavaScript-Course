@@ -1,18 +1,8 @@
-const makeServerRequest = new Promise((resolve, reject) => {
-  // responseFromServer is set to true to represent a successful response from a server
-  let responseFromServer = true;
+const str = "The quick brown fox jumps over the lazy dog.";
+const pattern = /fox/;
 
-  if (responseFromServer) {
-    resolve("We got the data");
-  } else {
-    reject("Data not received");
-  }
-});
+const result = pattern.test(str);
+console.log(result);
 
-makeServerRequest
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+const search = str.search(pattern);
+console.log(`${search ? "matched" : "not matched"}`);
