@@ -1,10 +1,4 @@
-console.log("Hello, World!".match(/hello/gi));
-const ourStr = "Regular expressions";
-const pattern = /regular/gi;
-console.log(ourStr.match(pattern));
-console.log(ourStr.search(pattern));
-console.log(ourStr.slice(ourStr.search(pattern)));
-console.log(ourStr.slice(ourStr.search(pattern), ourStr.length));
-console.log(ourStr.slice(ourStr.search(pattern), ourStr.length - 1));
-console.log(ourStr.slice(ourStr.search(pattern) + 1, ourStr.length));
-console.log(ourStr.slice(ourStr.search(pattern) + 1, ourStr.length - 1));
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/gi; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+console.log(result); // Change this line
