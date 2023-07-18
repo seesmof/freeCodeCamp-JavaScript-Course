@@ -1,4 +1,10 @@
-console.log("Hello, World!".match(/Hello/g));
+console.log("Hello, World!".match(/hello/gi));
 const ourStr = "Regular expressions";
-const ourRegex = /expressions/gi;
-console.log(ourStr.match(ourRegex));
+const pattern = /regular/gi;
+console.log(ourStr.match(pattern));
+console.log(ourStr.search(pattern));
+console.log(ourStr.slice(ourStr.search(pattern)));
+console.log(ourStr.slice(ourStr.search(pattern), ourStr.length));
+console.log(ourStr.slice(ourStr.search(pattern), ourStr.length - 1));
+console.log(ourStr.slice(ourStr.search(pattern) + 1, ourStr.length));
+console.log(ourStr.slice(ourStr.search(pattern) + 1, ourStr.length - 1));
