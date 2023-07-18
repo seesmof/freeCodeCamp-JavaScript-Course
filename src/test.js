@@ -1,4 +1,5 @@
-let myString = "Hello, World!";
-let myRegex = /Hello/;
-let result = myRegex.test(myString); // Change this line
-console.log(result);
+const str = "The quick brown fox jumps over the lazy dog";
+const pattern = /fox/;
+
+const matches = str.match(pattern);
+console.log(matches);
