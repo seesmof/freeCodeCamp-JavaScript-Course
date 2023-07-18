@@ -1,5 +1,3 @@
-const humStr = "I'll hum a song";
-const hugStr = "Bear hug";
-const pattern = /hu./gi;
-console.log(humStr.match(pattern));
-console.log(hugStr.match(pattern));
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/gi; // Change this line
+let result = unRegex.test(exampleStr);
