@@ -1,6 +1,15 @@
-const ending = "This is a never ending story";
-const regex = /story$/;
-console.log(ending.match(regex));
+const long = /[A-Za-z0-9_]+/;
+const short = /\w+/;
 
-const notEnding = "Sometimes a story will have to end";
-console.log(notEnding.match(regex));
+const numbers = ["42", "31", "54", "98"];
+const names = ["important_var", "this_is_cool", "remember_that"];
+
+numbers.forEach((number) => {
+  console.log(number.match(short));
+  console.log(number.match(long));
+});
+console.log(`\n`);
+names.forEach((name) => {
+  console.log(name.match(short));
+  console.log(name.match(long));
+});
