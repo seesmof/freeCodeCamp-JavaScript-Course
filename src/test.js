@@ -1,6 +1,3 @@
-const quit = "qu";
-const noquit = "qt";
-const quRegex = /q(?=u)/gi;
-const qRegex = /q(?!u)/gi;
-console.log(quit.match(quRegex));
-console.log(noquit.match(qRegex));
+const password = "abc123";
+const regex = /(?=\w{3,6})(?=\D*\d)/;
+console.log(regex.test(password));
