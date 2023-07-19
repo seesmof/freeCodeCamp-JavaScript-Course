@@ -1,6 +1,3 @@
-const first = "Ricky is first and can be found.";
-const regex = /^Ricky/;
-console.log(first.match(regex));
-
-const second = "You can't find Ricky now";
-console.log(regex.test(second));
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
