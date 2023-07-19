@@ -1,3 +1,6 @@
-let rickyAndCal = "Cal and Ricky both like racing.";
-let calRegex = /^Cal/; // Change this line
-let result = calRegex.test(rickyAndCal);
+const ending = "This is a never ending story";
+const regex = /story$/;
+console.log(ending.match(regex));
+
+const notEnding = "Sometimes a story will have to end";
+console.log(notEnding.match(regex));
