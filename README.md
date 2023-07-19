@@ -5,7 +5,7 @@
     <img src="./public/banner.png" alt="Logo" height="80">
   </a>
 
-<h1 align="center">JavaScript Algorithms and Data Structures Course - freeCodeCamp</h1>
+<h1 align="center">JavaScript Algorithms and Data Structures on FreeCodeCamp</h1>
 </div>
 
 ## Table of contents
@@ -19,13 +19,7 @@
 
 ## About
 
-This is an archive with pages from a freeCodeCamp JavaScript course. Built with Vite, TailwindCSS and vanilla JavaScript
-
-## Screenshots
-
-![](./public/mobile.png)
-
-![](./public/desktop.png)
+This repository is an archive of my learning journey of JavaScript as well as different mini-projects I had along the way. The pages are written with React and styled with Tailwind.
 
 ## Built with
 
@@ -36,6 +30,7 @@ This is an archive with pages from a freeCodeCamp JavaScript course. Built with 
 ## Links
 
 - [Live Preview](https://seesmof.github.io/javascript-algorithms-data-structures_free-code-camp/)
+- [Course](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 
 ## License
 
