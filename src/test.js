@@ -1,5 +1,6 @@
-const american = "color";
-const brit = "colour";
-const regex = /colou?r/gi;
-console.log(american.match(regex));
-console.log(brit.match(regex));
+const quit = "qu";
+const noquit = "qt";
+const quRegex = /q(?=u)/gi;
+const qRegex = /q(?!u)/gi;
+console.log(quRegex.test(quit));
+console.log(qRegex.test(quit));
