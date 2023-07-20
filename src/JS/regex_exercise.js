@@ -19,7 +19,7 @@ const threeOutput = `3. ${threeRegex.test(threeText)}\n`;
 // Write a regex to match a string that contains only uppercase or lowercase letters.
 const fourText =
   "pride division two queen summer struck night student immediately organized held keep model everybody musical number climate split military mainly visitor depth atomic basic";
-const fourRegex = /[a-zA-Z]/g;
+const fourRegex = /\w/g;
 const fourOutput = `4. ${fourRegex.test(fourText)}\n`;
 
 // Write a regex to match a valid URL. Hint: use quantifiers, character classes and grouping.
