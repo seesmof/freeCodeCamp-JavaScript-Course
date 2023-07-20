@@ -34,8 +34,14 @@ const sixRegex = /wut/g;
 const sixOutput = `6. ${sixText.match(sixRegex)}\n`;
 
 // Write a regex to match a valid hexadecimal color code like #FFF, #123456.
+const sevenText = "fdssdf";
+const sevenRegex = /gdf/g;
+const sevenOutput = `7. ${sevenRegex.test(sevenText)}\n`;
 
 // Write a regex to match a valid date format like MM/DD/YYYY. Use quantifiers, character classes and grouping.
+const eightText = "fdsfs";
+const eightRegex = /gdffd/g;
+const eightOutput = `8. ${eightRegex.test(eightText)}\n`;
 
 // Write a regex to match either a valid IPv4 address or IPv6 address.
 const nineText = `53.166.236.108
@@ -46,14 +52,25 @@ const nineText = `53.166.236.108
 bf39:e107:f864:b3f3:92b3:a9ed:fa64:b1b7
 1bb1:07aa:847b:3643:999a:d8d6:6f03:5210
 e973:4c19:2047:c39d:09f5:ff7e:61fd:49b1`;
-const nineRegex = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|123/gm;
+const nineRegex =
+  /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[a-z0-9]{4}:[a-z0-9]{4}:[a-z0-9]{4}:[a-z0-9]{4}:[a-z0-9]{4}:[a-z0-9]{4}:[a-z0-9]{4}:[a-z0-9]{4}/gm;
+const nineOutput = `9. ${nineText.match(nineRegex)}\n`;
 
 // Write a regex to validate a password between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter.
+const tenText = "123456789";
+const tenRegex = /fdsa/g;
+const tenOutput = `10. ${tenRegex.test(tenText)}\n`;
 
 // Write a regex to extract all hex color values from a string, and return them as an array.
+const elevenText = "fsdsdffd";
+const elevenRegex = /fsdf/g;
+const elevenOutput = `11. ${elevenRegex.test(elevenText)}\n`;
 
 // Write a regex to replace all instances of usernames (@user) in a tweet with actual hyperlinks.
+const twelveText = "fsddf";
+const twelveRegex = /fds/g;
+const twelveOutput = `12. ${twelveRegex.test(twelveText)}\n`;
 
 console.log(
-  `${oneOutput}${twoOutput}${threeOutput}${fourOutput}${fiveOutput}${sixOutput}`
+  `${oneOutput}${twoOutput}${threeOutput}${fourOutput}${fiveOutput}${sixOutput}${sevenOutput}${eightOutput}${nineOutput}${tenOutput}${elevenOutput}${twelveOutput}`
 );
