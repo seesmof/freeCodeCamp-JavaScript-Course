@@ -1,3 +1,1 @@
-const test = "Pumpkin";
-const regex = /P(engu|umpk)in/g;
-console.log(test.match(regex));
+const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/g;
