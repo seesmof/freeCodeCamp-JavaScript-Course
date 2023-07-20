@@ -13,7 +13,7 @@ const threeText = `zo@gafikkar.qa
   kuf@kuovageg.om
   ihci@tawsuwhuj.ee
   ojetuj@dif.ao`;
-const threeRegex = /^(\w+){2,}@(\w+){2,}\.(\w+){2,}$/gm;
+const threeRegex = /^([\w.-]+){2,}@([\w.-]+){2,}\.([\w.-]+){2,}$/gm;
 const threeOutput = `3. ${threeRegex.test(threeText)}\n`;
 
 // Write a regex to match a string that contains only uppercase or lowercase letters.
