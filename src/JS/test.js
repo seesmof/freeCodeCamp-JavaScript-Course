@@ -1,1 +1,4 @@
-const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/g;
+const repeatStr = "row row row your boat";
+const regex = /(\w+)\s\1+/gm;
+const matches = repeatStr.match(regex);
+console.log(matches);
