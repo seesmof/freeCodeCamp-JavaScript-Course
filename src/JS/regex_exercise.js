@@ -34,8 +34,12 @@ const sixRegex = /wut/g;
 const sixOutput = `6. ${sixText.match(sixRegex)}\n`;
 
 // Write a regex to match a valid hexadecimal color code like #FFF, #123456.
-const sevenText = "fdssdf";
-const sevenRegex = /gdf/g;
+const sevenText = `#cfc57e
+#bfb160
+#01c7cc
+#f22322
+#a2aa46`;
+const sevenRegex = /#[a-f0-9]{6}/gim;
 const sevenOutput = `7. ${sevenRegex.test(sevenText)}\n`;
 
 // Write a regex to match a valid date format like MM/DD/YYYY. Use quantifiers, character classes and grouping.
