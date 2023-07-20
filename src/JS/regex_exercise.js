@@ -38,6 +38,15 @@ const sixOutput = `6. ${sixText.match(sixRegex)}\n`;
 // Write a regex to match a valid date format like MM/DD/YYYY. Use quantifiers, character classes and grouping.
 
 // Write a regex to match either a valid IPv4 address or IPv6 address.
+const nineText = `53.166.236.108
+34.168.187.162
+188.106.191.198
+98.58.111.16
+87b6:b60c:7468:9729:43d5:97d7:88d7:23f7
+bf39:e107:f864:b3f3:92b3:a9ed:fa64:b1b7
+1bb1:07aa:847b:3643:999a:d8d6:6f03:5210
+e973:4c19:2047:c39d:09f5:ff7e:61fd:49b1`;
+const nineRegex = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|123/gm;
 
 // Write a regex to validate a password between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter.
 
