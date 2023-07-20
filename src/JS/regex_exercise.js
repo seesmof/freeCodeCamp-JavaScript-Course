@@ -67,8 +67,11 @@ const elevenRegex = /fsdf/g;
 const elevenOutput = `11. ${elevenRegex.test(elevenText)}\n`;
 
 // Write a regex to replace all instances of usernames (@user) in a tweet with actual hyperlinks.
-const twelveText = "fsddf";
-const twelveRegex = /fds/g;
+const twelveText = `@Chad
+@Mabel
+@Maria
+@Caroline`;
+const twelveRegex = /^@[\d\w]*/gm;
 const twelveOutput = `12. ${twelveRegex.test(twelveText)}\n`;
 
 console.log(
