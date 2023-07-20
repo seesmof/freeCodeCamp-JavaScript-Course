@@ -57,8 +57,8 @@ const nineRegex =
 const nineOutput = `9. ${nineText.match(nineRegex)}\n`;
 
 // Write a regex to validate a password between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter.
-const tenText = "123456789";
-const tenRegex = /fdsa/g;
+const tenText = "w4rSdx";
+const tenRegex = /(\d*[a-z]*[A-Z]*){6,20}/g;
 const tenOutput = `10. ${tenRegex.test(tenText)}\n`;
 
 // Write a regex to extract all hex color values from a string, and return them as an array.
@@ -76,9 +76,8 @@ stiff pie camp highway behavior exclaimed primitive satellites year sure fifteen
 #1b9922
 #3ca1f2`;
 const elevenRegex = /^#[a-f0-9]{6}|#[a-f0-9]{3}/gi;
-const elevenOutput = `11. ${elevenRegex.test(elevenText)}\n`;
 const elevenArray = elevenText.match(elevenRegex);
-console.log(typeof elevenArray);
+const elevenOutput = `11. ${elevenArray}\n`;
 
 // Write a regex to replace all instances of usernames (@user) in a tweet with actual hyperlinks.
 const twelveText = `@Chad
