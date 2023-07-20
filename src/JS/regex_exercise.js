@@ -62,9 +62,23 @@ const tenRegex = /fdsa/g;
 const tenOutput = `10. ${tenRegex.test(tenText)}\n`;
 
 // Write a regex to extract all hex color values from a string, and return them as an array.
-const elevenText = "fsdsdffd";
-const elevenRegex = /fsdf/g;
+const elevenText = `#879b35
+nature smell bottom sit sharp numeral park orange rich place whatever bow cost printed ancient globe industry plan specific running come drawn cotton found
+#49d343
+buried dig knew bare thus also welcome couple continued sentence bad curve glad soap fighting bag moving when perfectly his sick present entire gas
+#4fa90a
+fact completely buy welcome hold appropriate taught road die crowd hardly pick surrounded farmer screen lesson open child pass hollow wheat low somebody beat
+#6fd570
+wool bridge hollow serious map egg having similar duck lower close that shinning interior former supply atom due advice apartment include means current moving
+#fd0cea
+stiff pie camp highway behavior exclaimed primitive satellites year sure fifteen song metal earlier stems lonely ate lift till thought scientific arrangement rubber phrase
+#293f6b
+#1b9922
+#3ca1f2`;
+const elevenRegex = /^#[a-f0-9]{6}|#[a-f0-9]{3}/gi;
 const elevenOutput = `11. ${elevenRegex.test(elevenText)}\n`;
+const elevenArray = elevenText.match(elevenRegex);
+console.log(typeof elevenArray);
 
 // Write a regex to replace all instances of usernames (@user) in a tweet with actual hyperlinks.
 const twelveText = `@Chad
