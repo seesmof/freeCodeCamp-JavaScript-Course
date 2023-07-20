@@ -84,7 +84,7 @@ stiff pie camp highway behavior exclaimed primitive satellites year sure fifteen
 #293f6b
 #1b9922
 #3ca1f2`;
-const elevenRegex = /^#[a-f0-9]{6}|#[a-f0-9]{3}/gi;
+const elevenRegex = /^#[a-f0-9]{6}/gim;
 const elevenArray = elevenText.match(elevenRegex);
 const elevenOutput = `11. ${elevenArray}\n`;
 
