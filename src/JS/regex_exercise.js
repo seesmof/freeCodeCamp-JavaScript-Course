@@ -39,8 +39,13 @@ const sevenRegex = /gdf/g;
 const sevenOutput = `7. ${sevenRegex.test(sevenText)}\n`;
 
 // Write a regex to match a valid date format like MM/DD/YYYY. Use quantifiers, character classes and grouping.
-const eightText = "fdsfs";
-const eightRegex = /gdffd/g;
+const eightText = `12/2/2037
+5/18/2037
+10/30/2062
+10/5/2074
+8/24/2120
+10/20/2077`;
+const eightRegex = /\d{1,2}\/\d{1,2}\/\d{4}/gm;
 const eightOutput = `8. ${eightRegex.test(eightText)}\n`;
 
 // Write a regex to match either a valid IPv4 address or IPv6 address.
@@ -57,8 +62,12 @@ const nineRegex =
 const nineOutput = `9. ${nineText.match(nineRegex)}\n`;
 
 // Write a regex to validate a password between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter.
-const tenText = "w4rSdx";
-const tenRegex = /(\d*[a-z]*[A-Z]*){6,20}/g;
+const tenText = `w4rSdx
+jrx25kRjWd07fRjDeNu
+axCQyFZEEN
+ii9xxuXHloUN9Pfvf
+mimhh7b2tImlnCXu`;
+const tenRegex = /(\d*[a-z]*[A-Z]*){6,20}/gm;
 const tenOutput = `10. ${tenRegex.test(tenText)}\n`;
 
 // Write a regex to extract all hex color values from a string, and return them as an array.
