@@ -1,4 +1,3 @@
-const repeatRegex = /^(\d+) \1 \1$/gim;
-const repeatStr = "row row row row your boat";
-const matches = repeatRegex.exec(repeatStr);
-console.log(matches);
+const wrong = "The sky is silver";
+const regex = /silver/;
+console.log(wrong.replace(regex, "gold"));
