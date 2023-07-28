@@ -1,8 +1,8 @@
-function getNine() {
-  let x = 6;
-  let y = 3;
-  return x + y;
+function raiseToPower(b, e) {
+  return Math.pow(b, e);
 }
 
-let result = getNine();
-console.log(result);
+let base = 2;
+let exp = 3;
+let power = raiseToPower(base, exp);
+console.log(power);
